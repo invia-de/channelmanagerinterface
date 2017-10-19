@@ -52,3 +52,7 @@ A query for rate plans in a given date range.
 ### saveRatePlans(RatePlanSaveRequest ratePlanSaveRequest)
 
 Add/update multiple rate plans in a given date range. The added/updated rate plans will be returned.
+
+## FacadeDummy
+
+We provide a really simple FacadeDummy which implements the FacadeInterface an gives control over the output of the FacadeInterface methods.  
