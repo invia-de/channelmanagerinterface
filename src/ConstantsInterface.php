@@ -7,6 +7,8 @@ namespace Invia\CMI;
  */
 interface ConstantsInterface
 {
+    public const ADAPTER_TAG = 'invia.cmi.adapter';
+
     public const BOOKING_STATUS_OPEN      = 'open';
     public const BOOKING_STATUS_CLOSED    = 'closed';
     public const BOOKING_STATUS_CANCELLED = 'cancelled';

@@ -21,8 +21,9 @@ class CredentialsTest extends TestCase
     {
         $instance = new Credentials();
 
-        $apiToken = 'd48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183';
-        $this->assertEquals($instance, $instance->setApiToken($apiToken));
-        $this->assertEquals($apiToken, $instance->getApiToken());
+        $authToken = 'd48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183';
+        $this->assertNull($instance->getAuthToken());
+        $this->assertEquals($instance, $instance->setAuthToken($authToken));
+        $this->assertEquals($authToken, $instance->getAuthToken());
     }
 }
