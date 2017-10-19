@@ -13,13 +13,13 @@ class Credentials
     protected $authToken;
 
     /**
-     * @param string $apiToken
+     * @param string $authToken
      *
      * @return $this
      */
-    public function setAuthToken(string $apiToken) : Credentials
+    public function setAuthToken(string $authToken) : Credentials
     {
-        $this->authToken = $apiToken;
+        $this->authToken = $authToken;
 
         return $this;
     }
