@@ -10,16 +10,16 @@ class Credentials
     /**
      * @var string
      */
-    protected $apiToken;
+    protected $authToken;
 
     /**
-     * @param string $apiToken
+     * @param string $authToken
      *
      * @return $this
      */
-    public function setApiToken(string $apiToken) : Credentials
+    public function setAuthToken(string $authToken) : Credentials
     {
-        $this->apiToken = $apiToken;
+        $this->authToken = $authToken;
 
         return $this;
     }
@@ -27,8 +27,8 @@ class Credentials
     /**
      * @return string
      */
-    public function getApiToken() : string
+    public function getAuthToken() :? string
     {
-        return $this->apiToken;
+        return $this->authToken;
     }
 }
