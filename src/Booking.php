@@ -53,6 +53,11 @@ class Booking
     protected $customer;
 
     /**
+     * @var ContactInformation
+     */
+    protected $contactInformation;
+
+    /**
      * @var Person[]
      */
     protected $pax;
@@ -240,6 +245,26 @@ class Booking
     public function getCustomer() : Person
     {
         return $this->customer;
+    }
+
+    /**
+     * @param ContactInformation $contactInformation
+     *
+     * @return $this
+     */
+    public function setContactInformation(ContactInformation $contactInformation) : Booking
+    {
+        $this->contactInformation = $contactInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return ContactInformation
+     */
+    public function getContactInformation() : ContactInformation
+    {
+        return $this->contactInformation;
     }
 
     /**
