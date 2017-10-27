@@ -5,6 +5,7 @@ namespace Invia\Tests\CMI;
 use Invia\CMI\BookedRatePlan;
 use Invia\CMI\Booking;
 use Invia\CMI\ConstantsInterface;
+use Invia\CMI\ContactInformation;
 use Invia\CMI\Person;
 use PHPUnit\Framework\TestCase;
 
@@ -59,6 +60,10 @@ class BookingTest extends TestCase
         $customer = new Person();
         $this->assertEquals($instance, $instance->setCustomer($customer));
         $this->assertEquals($customer, $instance->getCustomer());
+
+        $contactInformation = new ContactInformation();
+        $this->assertEquals($instance, $instance->setContactInformation($contactInformation));
+        $this->assertEquals($contactInformation, $instance->getContactInformation());
 
         $pax = [new Person(), new Person()];
         $this->assertEquals($instance, $instance->setPax($pax));
