@@ -47,6 +47,7 @@ class ContactInformation
 
     /**
      * @param string $streetAndNumber
+     *
      * @return ContactInformation
      */
     public function setStreetAndNumber(string $streetAndNumber) : ContactInformation
