@@ -198,7 +198,7 @@ class RatePlanSaveRequest
     /**
      * @return float
      */
-    public function getPricePerPerson() :? float
+    public function getPricePerPerson() : float
     {
         return $this->pricePerPerson;
     }
@@ -218,7 +218,7 @@ class RatePlanSaveRequest
     /**
      * @return int
      */
-    public function getRemainingContingent() :? int
+    public function getRemainingContingent() : int
     {
         return $this->remainingContingent;
     }
@@ -228,7 +228,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setStopSell(bool $stopSell) :? RatePlanSaveRequest
+    public function setStopSell(bool $stopSell) : RatePlanSaveRequest
     {
         $this->stopSell = $stopSell;
 
@@ -238,7 +238,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function hasStopSell() :? bool
+    public function hasStopSell() : bool
     {
         return $this->stopSell;
     }
@@ -258,7 +258,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function isClosedArrival() :? bool
+    public function isClosedArrival() : bool
     {
         return $this->closedArrival;
     }
@@ -278,7 +278,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function isClosedDeparture() :? bool
+    public function isClosedDeparture() : bool
     {
         return $this->closedDeparture;
     }
