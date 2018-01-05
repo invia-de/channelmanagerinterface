@@ -18,17 +18,17 @@ class Booking
     protected $hotelUUID;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $arrivalDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $departureDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $bookingDateTime;
 
@@ -108,11 +108,11 @@ class Booking
     }
 
     /**
-     * @param \DateTime $arrivalDate
+     * @param \DateTimeInterface $arrivalDate
      *
      * @return $this
      */
-    public function setArrivalDate(\DateTime $arrivalDate) : Booking
+    public function setArrivalDate(\DateTimeInterface $arrivalDate) : Booking
     {
         $this->arrivalDate = $arrivalDate;
 
@@ -120,19 +120,19 @@ class Booking
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getArrivalDate() : \DateTime
+    public function getArrivalDate() : \DateTimeInterface
     {
         return $this->arrivalDate;
     }
 
     /**
-     * @param \DateTime $departureDate
+     * @param \DateTimeInterface $departureDate
      *
      * @return $this
      */
-    public function setDepartureDate(\DateTime $departureDate) : Booking
+    public function setDepartureDate(\DateTimeInterface $departureDate) : Booking
     {
         $this->departureDate = $departureDate;
 
@@ -140,19 +140,19 @@ class Booking
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getDepartureDate() : \DateTime
+    public function getDepartureDate() : \DateTimeInterface
     {
         return $this->departureDate;
     }
 
     /**
-     * @param \DateTime $bookingDateTime
+     * @param \DateTimeInterface $bookingDateTime
      *
      * @return $this
      */
-    public function setBookingDateTime(\DateTime $bookingDateTime) : Booking
+    public function setBookingDateTime(\DateTimeInterface $bookingDateTime) : Booking
     {
         $this->bookingDateTime = $bookingDateTime;
 
@@ -160,9 +160,9 @@ class Booking
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getBookingDateTime() : \DateTime
+    public function getBookingDateTime() : \DateTimeInterface
     {
         return $this->bookingDateTime;
     }

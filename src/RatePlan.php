@@ -23,7 +23,7 @@ class RatePlan
     protected $rateUUID;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $date;
 
@@ -118,11 +118,11 @@ class RatePlan
     }
 
     /**
-     * @param \DateTime $date
+     * @param \DateTimeInterface $date
      *
      * @return $this
      */
-    public function setDate(\DateTime $date) : RatePlan
+    public function setDate(\DateTimeInterface $date) : RatePlan
     {
         $this->date = $date;
 
@@ -130,9 +130,9 @@ class RatePlan
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getDate() : \DateTime
+    public function getDate() : \DateTimeInterface
     {
         return $this->date;
     }

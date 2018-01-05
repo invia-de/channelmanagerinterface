@@ -18,12 +18,12 @@ class BookingRequest
     protected $hotelUUID;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $startDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $endDate;
 
@@ -78,11 +78,11 @@ class BookingRequest
     }
 
     /**
-     * @param \DateTime $startDate
+     * @param \DateTimeInterface $startDate
      *
      * @return $this
      */
-    public function setStartDate(\DateTime $startDate) : BookingRequest
+    public function setStartDate(\DateTimeInterface $startDate) : BookingRequest
     {
         $this->startDate = $startDate;
 
@@ -90,19 +90,19 @@ class BookingRequest
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getStartDate() :? \DateTime
+    public function getStartDate() :? \DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTime $endDate
+     * @param \DateTimeInterface $endDate
      *
      * @return $this
      */
-    public function setEndDate(\DateTime $endDate) : BookingRequest
+    public function setEndDate(\DateTimeInterface $endDate) : BookingRequest
     {
         $this->endDate = $endDate;
 
@@ -110,9 +110,9 @@ class BookingRequest
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getEndDate() :? \DateTime
+    public function getEndDate() :? \DateTimeInterface
     {
         return $this->endDate;
     }

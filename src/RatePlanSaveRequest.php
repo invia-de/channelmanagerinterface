@@ -8,12 +8,12 @@ namespace Invia\CMI;
 class RatePlanSaveRequest
 {
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $startDate;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $endDate;
 
@@ -63,11 +63,11 @@ class RatePlanSaveRequest
     protected $closedDeparture;
 
     /**
-     * @param \DateTime $startDate
+     * @param \DateTimeInterface $startDate
      *
      * @return $this
      */
-    public function setStartDate(\DateTime $startDate) : RatePlanSaveRequest
+    public function setStartDate(\DateTimeInterface $startDate) : RatePlanSaveRequest
     {
         $this->startDate = $startDate;
 
@@ -75,19 +75,19 @@ class RatePlanSaveRequest
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getStartDate() : \DateTime
+    public function getStartDate() : \DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTime $endDate
+     * @param \DateTimeInterface $endDate
      *
      * @return $this
      */
-    public function setEndDate(\DateTime $endDate) : RatePlanSaveRequest
+    public function setEndDate(\DateTimeInterface $endDate) : RatePlanSaveRequest
     {
         $this->endDate = $endDate;
 
@@ -95,9 +95,9 @@ class RatePlanSaveRequest
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getEndDate() : \DateTime
+    public function getEndDate() : \DateTimeInterface
     {
         return $this->endDate;
     }
