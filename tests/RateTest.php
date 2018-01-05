@@ -23,7 +23,7 @@ class RateTest extends TestCase
 
         $uuid = '4f19acbe-cd24-4868-9c78-3ffa8bd6ab7f';
         $this->assertEquals($instance, $instance->setUUID($uuid));
-        $this->assertEquals($uuid, $instance->getUuid());
+        $this->assertEquals($uuid, $instance->getUUID());
 
         $name = 'lorem ipsum';
         $this->assertEquals($instance, $instance->setName($name));
