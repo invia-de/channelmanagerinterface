@@ -17,7 +17,7 @@ class Credentials
      *
      * @return $this
      */
-    public function setAuthToken(string $authToken) : Credentials
+    public function setAuthToken(string $authToken): self
     {
         $this->authToken = $authToken;
 
@@ -27,7 +27,7 @@ class Credentials
     /**
      * @return string
      */
-    public function getAuthToken() :? string
+    public function getAuthToken(): ?string
     {
         return $this->authToken;
     }

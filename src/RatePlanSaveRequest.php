@@ -67,7 +67,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setStartDate(\DateTimeInterface $startDate) : RatePlanSaveRequest
+    public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 
@@ -77,7 +77,7 @@ class RatePlanSaveRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getStartDate() : \DateTimeInterface
+    public function getStartDate(): \DateTimeInterface
     {
         return $this->startDate;
     }
@@ -87,7 +87,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setEndDate(\DateTimeInterface $endDate) : RatePlanSaveRequest
+    public function setEndDate(\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 
@@ -97,7 +97,7 @@ class RatePlanSaveRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getEndDate() : \DateTimeInterface
+    public function getEndDate(): \DateTimeInterface
     {
         return $this->endDate;
     }
@@ -107,7 +107,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setAffectedWeekDays(array $affectedWeekDays) : RatePlanSaveRequest
+    public function setAffectedWeekDays(array $affectedWeekDays): self
     {
         $this->affectedWeekDays = $affectedWeekDays;
 
@@ -117,7 +117,7 @@ class RatePlanSaveRequest
     /**
      * @return array
      */
-    public function getAffectedWeekDays() : array
+    public function getAffectedWeekDays(): array
     {
         return $this->affectedWeekDays;
     }
@@ -127,7 +127,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setHotelUUID(string $hotelUUID) : RatePlanSaveRequest
+    public function setHotelUUID(string $hotelUUID): self
     {
         $this->hotelUUID = $hotelUUID;
 
@@ -137,7 +137,7 @@ class RatePlanSaveRequest
     /**
      * @return string
      */
-    public function getHotelUUID() : string
+    public function getHotelUUID(): string
     {
         return $this->hotelUUID;
     }
@@ -147,7 +147,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setRoomUUID(string $roomUUID) : RatePlanSaveRequest
+    public function setRoomUUID(string $roomUUID): self
     {
         $this->roomUUID = $roomUUID;
 
@@ -157,7 +157,7 @@ class RatePlanSaveRequest
     /**
      * @return string
      */
-    public function getRoomUUID() : string
+    public function getRoomUUID(): string
     {
         return $this->roomUUID;
     }
@@ -167,7 +167,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID) : RatePlanSaveRequest
+    public function setRateUUID(string $rateUUID): self
     {
         $this->rateUUID = $rateUUID;
 
@@ -177,7 +177,7 @@ class RatePlanSaveRequest
     /**
      * @return string
      */
-    public function getRateUUID() : string
+    public function getRateUUID(): string
     {
         return $this->rateUUID;
     }
@@ -188,7 +188,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setPricePerPerson(float $pricePerPerson) : RatePlanSaveRequest
+    public function setPricePerPerson(float $pricePerPerson): self
     {
         $this->pricePerPerson = $pricePerPerson;
 
@@ -198,7 +198,7 @@ class RatePlanSaveRequest
     /**
      * @return float
      */
-    public function getPricePerPerson() : float
+    public function getPricePerPerson(): float
     {
         return $this->pricePerPerson;
     }
@@ -208,7 +208,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setRemainingContingent(int $remainingContingent) : RatePlanSaveRequest
+    public function setRemainingContingent(int $remainingContingent): self
     {
         $this->remainingContingent = $remainingContingent;
 
@@ -218,7 +218,7 @@ class RatePlanSaveRequest
     /**
      * @return int
      */
-    public function getRemainingContingent() : int
+    public function getRemainingContingent(): int
     {
         return $this->remainingContingent;
     }
@@ -228,7 +228,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setStopSell(bool $stopSell) : RatePlanSaveRequest
+    public function setStopSell(bool $stopSell): self
     {
         $this->stopSell = $stopSell;
 
@@ -238,7 +238,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function hasStopSell() : bool
+    public function hasStopSell(): bool
     {
         return $this->stopSell;
     }
@@ -248,7 +248,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setClosedArrival(bool $closedArrival) : RatePlanSaveRequest
+    public function setClosedArrival(bool $closedArrival): self
     {
         $this->closedArrival = $closedArrival;
 
@@ -258,7 +258,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function isClosedArrival() : bool
+    public function isClosedArrival(): bool
     {
         return $this->closedArrival;
     }
@@ -268,7 +268,7 @@ class RatePlanSaveRequest
      *
      * @return $this
      */
-    public function setClosedDeparture(bool $closedDeparture) : RatePlanSaveRequest
+    public function setClosedDeparture(bool $closedDeparture): self
     {
         $this->closedDeparture = $closedDeparture;
 
@@ -278,7 +278,7 @@ class RatePlanSaveRequest
     /**
      * @return bool
      */
-    public function isClosedDeparture() : bool
+    public function isClosedDeparture(): bool
     {
         return $this->closedDeparture;
     }

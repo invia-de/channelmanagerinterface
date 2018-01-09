@@ -37,7 +37,7 @@ class Rate
      *
      * @return $this
      */
-    public function setUUID(string $uuid) : Rate
+    public function setUUID(string $uuid): self
     {
         $this->uuid = $uuid;
 
@@ -47,7 +47,7 @@ class Rate
     /**
      * @return string
      */
-    public function getUUID() : string
+    public function getUUID(): string
     {
         return $this->uuid;
     }
@@ -57,7 +57,7 @@ class Rate
      *
      * @return $this
      */
-    public function setName(string $name) : Rate
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -67,7 +67,7 @@ class Rate
     /**
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -77,7 +77,7 @@ class Rate
      *
      * @return $this
      */
-    public function setRelease(int $release) : Rate
+    public function setRelease(int $release): self
     {
         $this->release = $release;
 
@@ -87,7 +87,7 @@ class Rate
     /**
      * @return int
      */
-    public function getRelease() : int
+    public function getRelease(): int
     {
         return $this->release;
     }
@@ -97,7 +97,7 @@ class Rate
      *
      * @return $this
      */
-    public function setMinStay(int $minStay) : Rate
+    public function setMinStay(int $minStay): self
     {
         $this->minStay = $minStay;
 
@@ -107,7 +107,7 @@ class Rate
     /**
      * @return int
      */
-    public function getMinStay() : int
+    public function getMinStay(): int
     {
         return $this->minStay;
     }
@@ -117,7 +117,7 @@ class Rate
      *
      * @return $this
      */
-    public function setMaxStay(int $maxStay) : Rate
+    public function setMaxStay(int $maxStay): self
     {
         $this->maxStay = $maxStay;
 
@@ -127,7 +127,7 @@ class Rate
     /**
      * @return int
      */
-    public function getMaxStay() : int
+    public function getMaxStay(): int
     {
         return $this->maxStay;
     }

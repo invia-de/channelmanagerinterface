@@ -72,7 +72,7 @@ class Booking
      *
      * @return $this
      */
-    public function setBookingUUID(string $bookingUUID) : Booking
+    public function setBookingUUID(string $bookingUUID): self
     {
         $this->bookingUUID = $bookingUUID;
 
@@ -82,7 +82,7 @@ class Booking
     /**
      * @return string
      */
-    public function getBookingUUID() : string
+    public function getBookingUUID(): string
     {
         return $this->bookingUUID;
     }
@@ -92,7 +92,7 @@ class Booking
      *
      * @return $this
      */
-    public function setHotelUUID(string $hotelUUID) : Booking
+    public function setHotelUUID(string $hotelUUID): self
     {
         $this->hotelUUID = $hotelUUID;
 
@@ -102,7 +102,7 @@ class Booking
     /**
      * @return string
      */
-    public function getHotelUUID() : string
+    public function getHotelUUID(): string
     {
         return $this->hotelUUID;
     }
@@ -112,7 +112,7 @@ class Booking
      *
      * @return $this
      */
-    public function setArrivalDate(\DateTimeInterface $arrivalDate) : Booking
+    public function setArrivalDate(\DateTimeInterface $arrivalDate): self
     {
         $this->arrivalDate = $arrivalDate;
 
@@ -122,7 +122,7 @@ class Booking
     /**
      * @return \DateTimeInterface
      */
-    public function getArrivalDate() : \DateTimeInterface
+    public function getArrivalDate(): \DateTimeInterface
     {
         return $this->arrivalDate;
     }
@@ -132,7 +132,7 @@ class Booking
      *
      * @return $this
      */
-    public function setDepartureDate(\DateTimeInterface $departureDate) : Booking
+    public function setDepartureDate(\DateTimeInterface $departureDate): self
     {
         $this->departureDate = $departureDate;
 
@@ -142,7 +142,7 @@ class Booking
     /**
      * @return \DateTimeInterface
      */
-    public function getDepartureDate() : \DateTimeInterface
+    public function getDepartureDate(): \DateTimeInterface
     {
         return $this->departureDate;
     }
@@ -152,7 +152,7 @@ class Booking
      *
      * @return $this
      */
-    public function setBookingDateTime(\DateTimeInterface $bookingDateTime) : Booking
+    public function setBookingDateTime(\DateTimeInterface $bookingDateTime): self
     {
         $this->bookingDateTime = $bookingDateTime;
 
@@ -162,7 +162,7 @@ class Booking
     /**
      * @return \DateTimeInterface
      */
-    public function getBookingDateTime() : \DateTimeInterface
+    public function getBookingDateTime(): \DateTimeInterface
     {
         return $this->bookingDateTime;
     }
@@ -172,7 +172,7 @@ class Booking
      *
      * @return $this
      */
-    public function setBookedRatePlans(array $bookedRatePlans) : Booking
+    public function setBookedRatePlans(array $bookedRatePlans): self
     {
         $this->bookedRatePlans = $bookedRatePlans;
 
@@ -182,7 +182,7 @@ class Booking
     /**
      * @return BookedRatePlan[]
      */
-    public function getBookedRatePlans() : array
+    public function getBookedRatePlans(): array
     {
         return $this->bookedRatePlans;
     }
@@ -192,7 +192,7 @@ class Booking
      *
      * @return $this
      */
-    public function setStatus(string $status) : Booking
+    public function setStatus(string $status): self
     {
         $this->status = $status;
 
@@ -202,7 +202,7 @@ class Booking
     /**
      * @return string
      */
-    public function getStatus() : string
+    public function getStatus(): string
     {
         return $this->status;
     }
@@ -212,7 +212,7 @@ class Booking
      *
      * @return $this
      */
-    public function setPrice(float $price) : Booking
+    public function setPrice(float $price): self
     {
         $this->price = $price;
 
@@ -222,7 +222,7 @@ class Booking
     /**
      * @return float
      */
-    public function getPrice() : float
+    public function getPrice(): float
     {
         return $this->price;
     }
@@ -232,7 +232,7 @@ class Booking
      *
      * @return $this
      */
-    public function setCustomer(Person $customer) : Booking
+    public function setCustomer(Person $customer): self
     {
         $this->customer = $customer;
 
@@ -242,7 +242,7 @@ class Booking
     /**
      * @return Person
      */
-    public function getCustomer() : Person
+    public function getCustomer(): Person
     {
         return $this->customer;
     }
@@ -252,7 +252,7 @@ class Booking
      *
      * @return $this
      */
-    public function setContactInformation(ContactInformation $contactInformation) : Booking
+    public function setContactInformation(ContactInformation $contactInformation): self
     {
         $this->contactInformation = $contactInformation;
 
@@ -262,7 +262,7 @@ class Booking
     /**
      * @return ContactInformation
      */
-    public function getContactInformation() : ContactInformation
+    public function getContactInformation(): ContactInformation
     {
         return $this->contactInformation;
     }
@@ -272,7 +272,7 @@ class Booking
      *
      * @return $this
      */
-    public function setPax(array $pax) : Booking
+    public function setPax(array $pax): self
     {
         $this->pax = $pax;
 
@@ -282,7 +282,7 @@ class Booking
     /**
      * @return Person[]
      */
-    public function getPax() : array
+    public function getPax(): array
     {
         return $this->pax;
     }
@@ -292,7 +292,7 @@ class Booking
      *
      * @return $this
      */
-    public function setComment(string $comment) : Booking
+    public function setComment(string $comment): self
     {
         $this->comment = $comment;
 
@@ -302,7 +302,7 @@ class Booking
     /**
      * @return string
      */
-    public function getComment() :? string
+    public function getComment(): ?string
     {
         return $this->comment;
     }

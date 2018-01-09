@@ -32,7 +32,7 @@ class Room
      *
      * @return $this
      */
-    public function setUUID(string $uuid) : Room
+    public function setUUID(string $uuid): self
     {
         $this->uuid = $uuid;
 
@@ -42,7 +42,7 @@ class Room
     /**
      * @return string
      */
-    public function getUUID() : string
+    public function getUUID(): string
     {
         return $this->uuid;
     }
@@ -52,7 +52,7 @@ class Room
      *
      * @return $this
      */
-    public function setName(string $name) : Room
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -62,7 +62,7 @@ class Room
     /**
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -72,7 +72,7 @@ class Room
      *
      * @return $this
      */
-    public function setCount(int $count) : Room
+    public function setCount(int $count): self
     {
         $this->count = $count;
 
@@ -82,7 +82,7 @@ class Room
     /**
      * @return int
      */
-    public function getCount() : int
+    public function getCount(): int
     {
         return $this->count;
     }
@@ -92,7 +92,7 @@ class Room
      *
      * @return $this
      */
-    public function setDefaultOccupancy(int $defaultOccupancy) : Room
+    public function setDefaultOccupancy(int $defaultOccupancy): self
     {
         $this->defaultOccupancy = $defaultOccupancy;
 
@@ -102,7 +102,7 @@ class Room
     /**
      * @return int
      */
-    public function getDefaultOccupancy() : int
+    public function getDefaultOccupancy(): int
     {
         return $this->defaultOccupancy;
     }

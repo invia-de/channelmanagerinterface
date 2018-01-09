@@ -21,7 +21,7 @@ class BookingTest extends TestCase
      *
      * @covers ::<public>
      */
-    public function testSetGet() : void
+    public function testSetGet(): void
     {
         $instance = new Booking();
 

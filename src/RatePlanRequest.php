@@ -42,7 +42,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setStartDate(\DateTimeInterface $startDate) : RatePlanRequest
+    public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 
@@ -52,7 +52,7 @@ class RatePlanRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getStartDate() : \DateTimeInterface
+    public function getStartDate(): \DateTimeInterface
     {
         return $this->startDate;
     }
@@ -62,7 +62,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setEndDate(\DateTimeInterface $endDate) : RatePlanRequest
+    public function setEndDate(\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 
@@ -72,7 +72,7 @@ class RatePlanRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getEndDate() : \DateTimeInterface
+    public function getEndDate(): \DateTimeInterface
     {
         return $this->endDate;
     }
@@ -82,7 +82,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setAffectedWeekDays(array $affectedWeekDays) : RatePlanRequest
+    public function setAffectedWeekDays(array $affectedWeekDays): self
     {
         $this->affectedWeekDays = $affectedWeekDays;
 
@@ -92,7 +92,7 @@ class RatePlanRequest
     /**
      * @return array
      */
-    public function getAffectedWeekDays() : array
+    public function getAffectedWeekDays(): array
     {
         return $this->affectedWeekDays;
     }
@@ -102,7 +102,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setHotelUUID(string $hotelUUID) : RatePlanRequest
+    public function setHotelUUID(string $hotelUUID): self
     {
         $this->hotelUUID = $hotelUUID;
 
@@ -122,7 +122,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setRoomUUIDs(array $roomUUIDs) : RatePlanRequest
+    public function setRoomUUIDs(array $roomUUIDs): self
     {
         $this->roomUUIDs = $roomUUIDs;
 
@@ -132,7 +132,7 @@ class RatePlanRequest
     /**
      * @return array
      */
-    public function getRoomUUIDs() : array
+    public function getRoomUUIDs(): array
     {
         return $this->roomUUIDs;
     }
@@ -142,7 +142,7 @@ class RatePlanRequest
      *
      * @return $this
      */
-    public function setRateUUIDs(array $rateUUIDs) : RatePlanRequest
+    public function setRateUUIDs(array $rateUUIDs): self
     {
         $this->rateUUIDs = $rateUUIDs;
 
@@ -152,7 +152,7 @@ class RatePlanRequest
     /**
      * @return array
      */
-    public function getRateUUIDs() : array
+    public function getRateUUIDs(): array
     {
         return $this->rateUUIDs;
     }
