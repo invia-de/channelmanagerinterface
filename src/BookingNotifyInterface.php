@@ -12,5 +12,5 @@ interface BookingNotifyInterface
      *
      * @return bool
      */
-    public function bookingNotify(Booking $booking) : bool;
+    public function bookingNotify(Booking $booking): bool;
 }

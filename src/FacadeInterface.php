@@ -12,33 +12,33 @@ interface FacadeInterface
      *
      * @return Room[]
      */
-    public function getRooms(Hotel $hotel) : array;
+    public function getRooms(Hotel $hotel): array;
 
     /**
      * @param Hotel $hotel
      *
      * @return Rate[]
      */
-    public function getRates(Hotel $hotel) : array;
+    public function getRates(Hotel $hotel): array;
 
     /**
      * @param BookingRequest $bookingRequest
      *
      * @return Booking[]
      */
-    public function getBookings(BookingRequest $bookingRequest) : array;
+    public function getBookings(BookingRequest $bookingRequest): array;
 
     /**
      * @param RatePlanRequest $ratePlanRequest
      *
      * @return RatePlan[]
      */
-    public function getRatePlans(RatePlanRequest $ratePlanRequest) : array;
+    public function getRatePlans(RatePlanRequest $ratePlanRequest): array;
 
     /**
      * @param RatePlanSaveRequest $ratePlanSaveRequest
      *
      * @return RatePlan[]
      */
-    public function saveRatePlans(RatePlanSaveRequest $ratePlanSaveRequest) : array;
+    public function saveRatePlans(RatePlanSaveRequest $ratePlanSaveRequest): array;
 }

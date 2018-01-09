@@ -13,29 +13,29 @@ interface AdapterInterface
     /**
      * @return Credentials
      */
-    public function getCredentials() : Credentials;
+    public function getCredentials(): Credentials;
 
     /**
      * @return string
      */
-    public function getAdapterKey() : string;
+    public function getAdapterKey(): string;
 
     /**
      * @return string
      */
-    public function getUrlPath() : string;
+    public function getUrlPath(): string;
 
     /**
      * @param Request $request
      *
      * @return AdapterInterface
      */
-    public function setRequest(Request $request) : AdapterInterface;
+    public function setRequest(Request $request): self;
 
     /**
      * @param FacadeInterface $facade
      *
      * @return Response
      */
-    public function handleRequest(FacadeInterface $facade) : Response;
+    public function handleRequest(FacadeInterface $facade): Response;
 }

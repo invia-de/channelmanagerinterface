@@ -42,7 +42,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return Room[]
      */
-    public function getRooms(Hotel $hotel) : array
+    public function getRooms(Hotel $hotel): array
     {
         return $this->rooms;
     }
@@ -52,7 +52,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return FacadeDummy
      */
-    public function addRoom(Room $room) : FacadeDummy
+    public function addRoom(Room $room): FacadeDummy
     {
         $this->rooms[] = $room;
 
@@ -62,7 +62,7 @@ class FacadeDummy implements FacadeInterface
     /**
      * @return FacadeDummy
      */
-    public function clearRooms() : FacadeDummy
+    public function clearRooms(): FacadeDummy
     {
         $this->rooms = [];
 
@@ -74,7 +74,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return Rate[]
      */
-    public function getRates(Hotel $hotel) : array
+    public function getRates(Hotel $hotel): array
     {
         return $this->rates;
     }
@@ -84,7 +84,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return FacadeDummy
      */
-    public function addRate(Rate $rate) : FacadeDummy
+    public function addRate(Rate $rate): FacadeDummy
     {
         $this->rates[] = $rate;
 
@@ -94,7 +94,7 @@ class FacadeDummy implements FacadeInterface
     /**
      * @return FacadeDummy
      */
-    public function clearRates() : FacadeDummy
+    public function clearRates(): FacadeDummy
     {
         $this->rates = [];
 
@@ -116,7 +116,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return FacadeDummy
      */
-    public function addBooking(Booking $booking) : FacadeDummy
+    public function addBooking(Booking $booking): FacadeDummy
     {
         $this->bookings[] = $booking;
 
@@ -126,7 +126,7 @@ class FacadeDummy implements FacadeInterface
     /**
      * @return FacadeDummy
      */
-    public function clearBookings() : FacadeDummy
+    public function clearBookings(): FacadeDummy
     {
         $this->bookings = [];
 
@@ -158,7 +158,7 @@ class FacadeDummy implements FacadeInterface
      *
      * @return FacadeDummy
      */
-    public function addRatePlan(RatePlan $ratePlan) : FacadeDummy
+    public function addRatePlan(RatePlan $ratePlan): FacadeDummy
     {
         $this->ratePlans[] = $ratePlan;
 
@@ -168,7 +168,7 @@ class FacadeDummy implements FacadeInterface
     /**
      * @return FacadeDummy
      */
-    public function clearRatePlans() : FacadeDummy
+    public function clearRatePlans(): FacadeDummy
     {
         $this->ratePlans = [];
 

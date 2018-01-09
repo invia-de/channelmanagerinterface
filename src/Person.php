@@ -32,7 +32,7 @@ class Person
      *
      * @return $this
      */
-    public function setGender(string $gender) : Person
+    public function setGender(string $gender): self
     {
         $this->gender = $gender;
 
@@ -42,7 +42,7 @@ class Person
     /**
      * @return string
      */
-    public function getGender() : string
+    public function getGender(): string
     {
         return $this->gender;
     }
@@ -52,7 +52,7 @@ class Person
      *
      * @return $this
      */
-    public function setFirstName(string $firstName) : Person
+    public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
 
@@ -62,7 +62,7 @@ class Person
     /**
      * @return string
      */
-    public function getFirstName() : string
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
@@ -72,7 +72,7 @@ class Person
      *
      * @return $this
      */
-    public function setLastName(string $lastName) : Person
+    public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
 
@@ -82,7 +82,7 @@ class Person
     /**
      * @return string
      */
-    public function getLastName() : string
+    public function getLastName(): string
     {
         return $this->lastName;
     }
@@ -92,7 +92,7 @@ class Person
      *
      * @return $this
      */
-    public function setAge(int $age) : Person
+    public function setAge(int $age): self
     {
         $this->age = $age;
 
@@ -102,7 +102,7 @@ class Person
     /**
      * @return int
      */
-    public function getAge() :? int
+    public function getAge(): ?int
     {
         return $this->age;
     }

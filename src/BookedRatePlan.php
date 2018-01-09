@@ -27,7 +27,7 @@ class BookedRatePlan
      *
      * @return $this
      */
-    public function setRoomUUID(string $roomUUID) : BookedRatePlan
+    public function setRoomUUID(string $roomUUID): self
     {
         $this->roomUUID = $roomUUID;
 
@@ -37,7 +37,7 @@ class BookedRatePlan
     /**
      * @return string
      */
-    public function getRoomUUID() : string
+    public function getRoomUUID(): string
     {
         return $this->roomUUID;
     }
@@ -47,7 +47,7 @@ class BookedRatePlan
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID) : BookedRatePlan
+    public function setRateUUID(string $rateUUID): self
     {
         $this->rateUUID = $rateUUID;
 
@@ -57,7 +57,7 @@ class BookedRatePlan
     /**
      * @return string
      */
-    public function getRateUUID() : string
+    public function getRateUUID(): string
     {
         return $this->rateUUID;
     }
@@ -67,7 +67,7 @@ class BookedRatePlan
      *
      * @return $this
      */
-    public function setCount(int $count) : BookedRatePlan
+    public function setCount(int $count): self
     {
         $this->count = $count;
 
@@ -77,7 +77,7 @@ class BookedRatePlan
     /**
      * @return int
      */
-    public function getCount() : int
+    public function getCount(): int
     {
         return $this->count;
     }

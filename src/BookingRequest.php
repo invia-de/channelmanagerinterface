@@ -42,7 +42,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setBookingUUID(string $bookingUUID) : BookingRequest
+    public function setBookingUUID(string $bookingUUID): self
     {
         $this->bookingUUID = $bookingUUID;
 
@@ -52,7 +52,7 @@ class BookingRequest
     /**
      * @return string
      */
-    public function getBookingUUID() :? string
+    public function getBookingUUID(): ?string
     {
         return $this->bookingUUID;
     }
@@ -62,7 +62,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setHotelUUID(string $hotelUUID) : BookingRequest
+    public function setHotelUUID(string $hotelUUID): self
     {
         $this->hotelUUID = $hotelUUID;
 
@@ -72,7 +72,7 @@ class BookingRequest
     /**
      * @return string
      */
-    public function getHotelUUID() :? string
+    public function getHotelUUID(): ?string
     {
         return $this->hotelUUID;
     }
@@ -82,7 +82,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setStartDate(\DateTimeInterface $startDate) : BookingRequest
+    public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 
@@ -92,7 +92,7 @@ class BookingRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getStartDate() :? \DateTimeInterface
+    public function getStartDate(): ?\DateTimeInterface
     {
         return $this->startDate;
     }
@@ -102,7 +102,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setEndDate(\DateTimeInterface $endDate) : BookingRequest
+    public function setEndDate(\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 
@@ -112,7 +112,7 @@ class BookingRequest
     /**
      * @return \DateTimeInterface
      */
-    public function getEndDate() :? \DateTimeInterface
+    public function getEndDate(): ?\DateTimeInterface
     {
         return $this->endDate;
     }
@@ -122,7 +122,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setDateType(string $dateType) : BookingRequest
+    public function setDateType(string $dateType): self
     {
         $this->dateType = $dateType;
 
@@ -132,7 +132,7 @@ class BookingRequest
     /**
      * @return string
      */
-    public function getDateType() :? string
+    public function getDateType(): ?string
     {
         return $this->dateType;
     }
@@ -142,7 +142,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setOnlyChanged(bool $onlyChanged) : BookingRequest
+    public function setOnlyChanged(bool $onlyChanged): self
     {
         $this->onlyChanged = $onlyChanged;
 
@@ -152,7 +152,7 @@ class BookingRequest
     /**
      * @return bool
      */
-    public function getOnlyChanged() :? bool
+    public function getOnlyChanged(): ?bool
     {
         return $this->onlyChanged;
     }

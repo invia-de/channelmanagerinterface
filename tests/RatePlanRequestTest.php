@@ -18,7 +18,7 @@ class RatePlanRequestTest extends TestCase
      *
      * @covers ::<public>
      */
-    public function testSetGet() : void
+    public function testSetGet(): void
     {
         $instance = new RatePlanRequest();
 

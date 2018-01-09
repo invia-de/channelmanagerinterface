@@ -15,9 +15,9 @@ class Hotel
     /**
      * @param string $uuid
      *
-     * @return self
+     * @return $this
      */
-    public function setUUID(string $uuid) : Hotel
+    public function setUUID(string $uuid): self
     {
         $this->uuid = $uuid;
 
@@ -27,7 +27,7 @@ class Hotel
     /**
      * @return string
      */
-    public function getUUID() : string
+    public function getUUID(): string
     {
         return $this->uuid;
     }

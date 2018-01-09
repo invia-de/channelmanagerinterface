@@ -62,7 +62,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setHotelUUID(string $hotelUUID) : RatePlan
+    public function setHotelUUID(string $hotelUUID): self
     {
         $this->hotelUUID = $hotelUUID;
 
@@ -72,7 +72,7 @@ class RatePlan
     /**
      * @return string
      */
-    public function getHotelUUID() : string
+    public function getHotelUUID(): string
     {
         return $this->hotelUUID;
     }
@@ -82,7 +82,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setRoomUUID(string $roomUUID) : RatePlan
+    public function setRoomUUID(string $roomUUID): self
     {
         $this->roomUUID = $roomUUID;
 
@@ -92,7 +92,7 @@ class RatePlan
     /**
      * @return string
      */
-    public function getRoomUUID() : string
+    public function getRoomUUID(): string
     {
         return $this->roomUUID;
     }
@@ -102,7 +102,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID) : RatePlan
+    public function setRateUUID(string $rateUUID): self
     {
         $this->rateUUID = $rateUUID;
 
@@ -112,7 +112,7 @@ class RatePlan
     /**
      * @return string
      */
-    public function getRateUUID() : string
+    public function getRateUUID(): string
     {
         return $this->rateUUID;
     }
@@ -122,7 +122,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setDate(\DateTimeInterface $date) : RatePlan
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 
@@ -132,7 +132,7 @@ class RatePlan
     /**
      * @return \DateTimeInterface
      */
-    public function getDate() : \DateTimeInterface
+    public function getDate(): \DateTimeInterface
     {
         return $this->date;
     }
@@ -142,7 +142,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setPricePerPerson(float $pricePerPerson) : RatePlan
+    public function setPricePerPerson(float $pricePerPerson): self
     {
         $this->pricePerPerson = $pricePerPerson;
 
@@ -152,7 +152,7 @@ class RatePlan
     /**
      * @return float
      */
-    public function getPricePerPerson() : float
+    public function getPricePerPerson(): float
     {
         return $this->pricePerPerson;
     }
@@ -162,7 +162,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setRemainingContingent(int $remainingContingent) : RatePlan
+    public function setRemainingContingent(int $remainingContingent): self
     {
         $this->remainingContingent = $remainingContingent;
 
@@ -172,7 +172,7 @@ class RatePlan
     /**
      * @return int
      */
-    public function getRemainingContingent() : int
+    public function getRemainingContingent(): int
     {
         return $this->remainingContingent;
     }
@@ -182,7 +182,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setBooked(int $booked) : RatePlan
+    public function setBooked(int $booked): self
     {
         $this->booked = $booked;
 
@@ -192,7 +192,7 @@ class RatePlan
     /**
      * @return int
      */
-    public function getBooked() : int
+    public function getBooked(): int
     {
         return $this->booked;
     }
@@ -202,7 +202,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setStopSell(bool $stopSell) : RatePlan
+    public function setStopSell(bool $stopSell): self
     {
         $this->stopSell = $stopSell;
 
@@ -212,7 +212,7 @@ class RatePlan
     /**
      * @return bool
      */
-    public function hasStopSell() : bool
+    public function hasStopSell(): bool
     {
         return $this->stopSell;
     }
@@ -222,7 +222,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setClosedArrival(bool $closedArrival) : RatePlan
+    public function setClosedArrival(bool $closedArrival): self
     {
         $this->closedArrival = $closedArrival;
 
@@ -232,7 +232,7 @@ class RatePlan
     /**
      * @return bool
      */
-    public function isClosedArrival() : bool
+    public function isClosedArrival(): bool
     {
         return $this->closedArrival;
     }
@@ -242,7 +242,7 @@ class RatePlan
      *
      * @return $this
      */
-    public function setClosedDeparture(bool $closedDeparture) : RatePlan
+    public function setClosedDeparture(bool $closedDeparture): self
     {
         $this->closedDeparture = $closedDeparture;
 
@@ -252,7 +252,7 @@ class RatePlan
     /**
      * @return bool
      */
-    public function isClosedDeparture() : bool
+    public function isClosedDeparture(): bool
     {
         return $this->closedDeparture;
     }

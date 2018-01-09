@@ -40,7 +40,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getStreetAndNumber() : string
+    public function getStreetAndNumber(): string
     {
         return $this->streetAndNumber;
     }
@@ -48,9 +48,9 @@ class ContactInformation
     /**
      * @param string $streetAndNumber
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setStreetAndNumber(string $streetAndNumber) : ContactInformation
+    public function setStreetAndNumber(string $streetAndNumber): self
     {
         $this->streetAndNumber = $streetAndNumber;
 
@@ -60,7 +60,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getPostalCode() : string
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
@@ -68,9 +68,9 @@ class ContactInformation
     /**
      * @param string $postalCode
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setPostalCode(string $postalCode) : ContactInformation
+    public function setPostalCode(string $postalCode): self
     {
         $this->postalCode = $postalCode;
 
@@ -80,7 +80,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -88,9 +88,9 @@ class ContactInformation
     /**
      * @param string $city
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setCity(string $city) : ContactInformation
+    public function setCity(string $city): self
     {
         $this->city = $city;
 
@@ -100,7 +100,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getCountry() : string
+    public function getCountry(): string
     {
         return $this->country;
     }
@@ -108,9 +108,9 @@ class ContactInformation
     /**
      * @param string $country
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setCountry(string $country) : ContactInformation
+    public function setCountry(string $country): self
     {
         $this->country = $country;
 
@@ -120,7 +120,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getEmail() : string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -128,9 +128,9 @@ class ContactInformation
     /**
      * @param string $email
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setEmail(string $email) : ContactInformation
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -140,7 +140,7 @@ class ContactInformation
     /**
      * @return string
      */
-    public function getPhone() :? string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
@@ -148,9 +148,9 @@ class ContactInformation
     /**
      * @param string $phone
      *
-     * @return ContactInformation
+     * @return $this
      */
-    public function setPhone(string $phone) : ContactInformation
+    public function setPhone(string $phone): self
     {
         $this->phone = $phone;
 
