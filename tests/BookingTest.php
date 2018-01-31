@@ -57,6 +57,10 @@ class BookingTest extends TestCase
         $this->assertEquals($instance, $instance->setPrice($price));
         $this->assertEquals($price, $instance->getPrice());
 
+        $currency = 'EUR';
+        $this->assertEquals($instance, $instance->setCurrency($currency));
+        $this->assertEquals($currency, $instance->getCurrency());
+
         $customer = new Person();
         $this->assertEquals($instance, $instance->setCustomer($customer));
         $this->assertEquals($customer, $instance->getCustomer());
