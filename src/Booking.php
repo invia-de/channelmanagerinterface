@@ -48,6 +48,11 @@ class Booking
     protected $price;
 
     /**
+     * @var string
+     */
+    protected $currency;
+
+    /**
      * @var Person
      */
     protected $customer;
@@ -225,6 +230,26 @@ class Booking
     public function getPrice(): float
     {
         return $this->price;
+    }
+
+    /**
+     * @param string $currency
+     *
+     * @return $this
+     */
+    public function setCurrency(string $currency): self
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency(): string
+    {
+        return $this->currency;
     }
 
     /**
