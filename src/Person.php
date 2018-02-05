@@ -88,11 +88,11 @@ class Person
     }
 
     /**
-     * @param int $age
+     * @param int|null $age
      *
      * @return $this
      */
-    public function setAge(int $age): self
+    public function setAge(int $age = null): self
     {
         $this->age = $age;
 
@@ -100,7 +100,7 @@ class Person
     }
 
     /**
-     * @return int
+     * @return int|null
      */
     public function getAge(): ?int
     {

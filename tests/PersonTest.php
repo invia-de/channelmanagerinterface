@@ -38,5 +38,7 @@ class PersonTest extends TestCase
         $this->assertNull($instance->getAge());
         $this->assertEquals($instance, $instance->setAge($age));
         $this->assertEquals($age, $instance->getAge());
+        $this->assertEquals($instance, $instance->setAge());
+        $this->assertNull($instance->getAge());
     }
 }

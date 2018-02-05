@@ -45,5 +45,7 @@ class ContactInformationTest extends TestCase
         $this->assertNull($instance->getPhone());
         $this->assertEquals($instance, $instance->setPhone($phone));
         $this->assertEquals($phone, $instance->getPhone());
+        $this->assertEquals($instance, $instance->setPhone());
+        $this->assertNull($instance->getPhone());
     }
 }

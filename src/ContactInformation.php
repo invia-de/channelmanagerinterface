@@ -138,7 +138,7 @@ class ContactInformation
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getPhone(): ?string
     {
@@ -146,11 +146,11 @@ class ContactInformation
     }
 
     /**
-     * @param string $phone
+     * @param string|null $phone
      *
      * @return $this
      */
-    public function setPhone(string $phone): self
+    public function setPhone(string $phone = null): self
     {
         $this->phone = $phone;
 
