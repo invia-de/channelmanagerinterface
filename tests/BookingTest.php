@@ -77,5 +77,7 @@ class BookingTest extends TestCase
         $this->assertNull($instance->getComment());
         $this->assertEquals($instance, $instance->setComment($comment));
         $this->assertEquals($comment, $instance->getComment());
+        $this->assertEquals($instance, $instance->setComment());
+        $this->assertNull($instance->getComment());
     }
 }

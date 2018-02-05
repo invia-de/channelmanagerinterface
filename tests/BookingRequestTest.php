@@ -26,7 +26,6 @@ class BookingRequestTest extends TestCase
         $this->assertEquals($bookingUUID, $instance->getBookingUUID());
 
         $hotelUUID = 'd54d7d6a-ebd2-4e39-9d8f-d6d97d72a442';
-        $this->assertNull($instance->getHotelUUID());
         $this->assertEquals($instance, $instance->setHotelUUID($hotelUUID));
         $this->assertEquals($hotelUUID, $instance->getHotelUUID());
 
@@ -34,11 +33,15 @@ class BookingRequestTest extends TestCase
         $this->assertNull($instance->getStartDate());
         $this->assertEquals($instance, $instance->setStartDate($startDate));
         $this->assertEquals($startDate, $instance->getStartDate());
+        $this->assertEquals($instance, $instance->setStartDate());
+        $this->assertNull($instance->getStartDate());
 
         $endDate = new \DateTime();
         $this->assertNull($instance->getEndDate());
         $this->assertEquals($instance, $instance->setEndDate($endDate));
         $this->assertEquals($endDate, $instance->getEndDate());
+        $this->assertEquals($instance, $instance->setEndDate());
+        $this->assertNull($instance->getEndDate());
 
         $dateType = ConstantsInterface::BOOKING_REQUEST_DATETYPE_MODIFIED;
         $this->assertEquals(ConstantsInterface::BOOKING_REQUEST_DATETYPE_BOOKING, $instance->getDateType());
@@ -46,7 +49,7 @@ class BookingRequestTest extends TestCase
         $this->assertEquals($dateType, $instance->getDateType());
 
         $onlyChanged = true;
-        $this->assertNull($instance->getOnlyChanged());
+        $this->assertFalse($instance->getOnlyChanged());
         $this->assertEquals($instance, $instance->setOnlyChanged($onlyChanged));
         $this->assertEquals($onlyChanged, $instance->getOnlyChanged());
     }

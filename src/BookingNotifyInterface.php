@@ -10,7 +10,9 @@ interface BookingNotifyInterface
     /**
      * @param Booking $booking
      *
-     * @return bool
+     * @return void
+     *
+     * @throws BookingNotificationFailedException Is thrown when the notification for the given booking failed
      */
-    public function bookingNotify(Booking $booking): bool;
+    public function bookingNotify(Booking $booking): void;
 }

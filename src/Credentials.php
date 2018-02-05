@@ -13,11 +13,11 @@ class Credentials
     protected $authToken;
 
     /**
-     * @param string $authToken
+     * @param string|null $authToken
      *
      * @return $this
      */
-    public function setAuthToken(string $authToken): self
+    public function setAuthToken(string $authToken = null): self
     {
         $this->authToken = $authToken;
 
@@ -25,7 +25,7 @@ class Credentials
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getAuthToken(): ?string
     {

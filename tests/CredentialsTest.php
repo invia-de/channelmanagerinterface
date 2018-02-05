@@ -25,5 +25,7 @@ class CredentialsTest extends TestCase
         $this->assertNull($instance->getAuthToken());
         $this->assertEquals($instance, $instance->setAuthToken($authToken));
         $this->assertEquals($authToken, $instance->getAuthToken());
+        $this->assertEquals($instance, $instance->setAuthToken());
+        $this->assertNull($instance->getAuthToken());
     }
 }
