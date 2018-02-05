@@ -8,23 +8,32 @@ namespace Invia\CMI;
 interface FacadeInterface
 {
     /**
-     * @param Hotel $hotel
+     * @param RoomRequest $roomRequest
      *
      * @return Room[]
+     *
+     * @throws InsufficientRightsException
+     * @throws InvalidRequestException
      */
-    public function getRooms(Hotel $hotel): array;
+    public function getRooms(RoomRequest $roomRequest): array;
 
     /**
-     * @param Hotel $hotel
+     * @param RateRequest $rateRequest
      *
      * @return Rate[]
+     *
+     * @throws InsufficientRightsException
+     * @throws InvalidRequestException
      */
-    public function getRates(Hotel $hotel): array;
+    public function getRates(RateRequest $rateRequest): array;
 
     /**
      * @param BookingRequest $bookingRequest
      *
      * @return Booking[]
+     *
+     * @throws InsufficientRightsException
+     * @throws InvalidRequestException
      */
     public function getBookings(BookingRequest $bookingRequest): array;
 
@@ -32,6 +41,9 @@ interface FacadeInterface
      * @param RatePlanRequest $ratePlanRequest
      *
      * @return RatePlan[]
+     *
+     * @throws InsufficientRightsException
+     * @throws InvalidRequestException
      */
     public function getRatePlans(RatePlanRequest $ratePlanRequest): array;
 
@@ -39,6 +51,9 @@ interface FacadeInterface
      * @param RatePlanSaveRequest $ratePlanSaveRequest
      *
      * @return RatePlan[]
+     *
+     * @throws InsufficientRightsException
+     * @throws InvalidRequestException
      */
     public function saveRatePlans(RatePlanSaveRequest $ratePlanSaveRequest): array;
 }

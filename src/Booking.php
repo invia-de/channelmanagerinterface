@@ -313,11 +313,11 @@ class Booking
     }
 
     /**
-     * @param string $comment
+     * @param string|null $comment
      *
      * @return $this
      */
-    public function setComment(string $comment): self
+    public function setComment(string $comment = null): self
     {
         $this->comment = $comment;
 
@@ -325,7 +325,7 @@ class Booking
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getComment(): ?string
     {
