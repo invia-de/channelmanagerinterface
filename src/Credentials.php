@@ -8,7 +8,7 @@ namespace Invia\CMI;
 class Credentials
 {
     /**
-     * @var string
+     * @var string|null
      */
     protected $authToken;
 
@@ -17,7 +17,7 @@ class Credentials
      *
      * @return $this
      */
-    public function setAuthToken(string $authToken = null): self
+    public function setAuthToken(?string $authToken): self
     {
         $this->authToken = $authToken;
 

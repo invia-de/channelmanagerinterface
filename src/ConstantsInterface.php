@@ -19,6 +19,18 @@ interface ConstantsInterface
     public const BOOKING_REQUEST_DATETYPE_BOOKING   = 'booking';
     public const BOOKING_REQUEST_DATETYPE_MODIFIED  = 'modified';
 
+    public const BOARDING_SELF_CATERING      = 'self_catering';
+    public const BOARDING_BREAKFAST          = 'breakfast';
+    public const BOARDING_HALF_BOARD         = 'half_board';
+    public const BOARDING_HALF_BOARD_PLUS    = 'half_board_plus';
+    public const BOARDING_FULL_BOARD         = 'full_board';
+    public const BOARDING_FULL_BOARD_PLUS    = 'full_board_plus';
+    public const BOARDING_ALL_INCLUSIVE      = 'all_inclusive';
+    public const BOARDING_ALL_INCLUSIVE_PLUS = 'all_inclusive_plus';
+
+    public const RATE_TYPE_NET_RATE   = 'net_rate';
+    public const RATE_TYPE_GROSS_RATE = 'gross_rate';
+
     public const GENDER_MALE   = 'male';
     public const GENDER_FEMALE = 'female';
 

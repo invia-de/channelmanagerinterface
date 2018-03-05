@@ -2,6 +2,7 @@
 
 namespace Invia\Tests\CMI;
 
+use Invia\CMI\ConstantsInterface;
 use Invia\CMI\RatePlan;
 use PHPUnit\Framework\TestCase;
 
@@ -13,50 +14,40 @@ use PHPUnit\Framework\TestCase;
 class RatePlanTest extends TestCase
 {
     /**
+     * @return void
+     *
      * @covers ::<public>
      */
     public function testSetGet(): void
     {
         $instance = new RatePlan();
 
-        $hotelUUID = 'ceb7df34-483e-41f4-ae92-fa61bc1e7ea7';
-        $this->assertEquals($instance, $instance->setHotelUUID($hotelUUID));
-        $this->assertEquals($hotelUUID, $instance->getHotelUUID());
+        $uuid = '4f19acbe-cd24-4868-9c78-3ffa8bd6ab7f';
+        $this->assertEquals($instance, $instance->setUUID($uuid));
+        $this->assertEquals($uuid, $instance->getUUID());
 
-        $roomUUID = 'f3b33826-037e-4a42-824f-cbd4ad60ef3e';
-        $this->assertEquals($instance, $instance->setRoomUUID($roomUUID));
-        $this->assertEquals($roomUUID, $instance->getRoomUUID());
+        $name = 'lorem ipsum';
+        $this->assertEquals($instance, $instance->setName($name));
+        $this->assertEquals($name, $instance->getName());
 
-        $rateUUID = 'a8225c0e-1606-414d-9831-83ee106c9f1a';
-        $this->assertEquals($instance, $instance->setRateUUID($rateUUID));
-        $this->assertEquals($rateUUID, $instance->getRateUUID());
+        $rateType = ConstantsInterface::RATE_TYPE_NET_RATE;
+        $this->assertEquals($instance, $instance->setRateType($rateType));
+        $this->assertEquals($rateType, $instance->getRateType());
 
-        $date = new \DateTime();
-        $this->assertEquals($instance, $instance->setDate($date));
-        $this->assertEquals($date, $instance->getDate());
+        $boarding = ConstantsInterface::BOARDING_BREAKFAST;
+        $this->assertEquals($instance, $instance->setBoarding($boarding));
+        $this->assertEquals($boarding, $instance->getBoarding());
 
-        $pricePerPerson = 3.14;
-        $this->assertEquals($instance, $instance->setPricePerPerson($pricePerPerson));
-        $this->assertEquals($pricePerPerson, $instance->getPricePerPerson());
+        $release = 1;
+        $this->assertEquals($instance, $instance->setRelease($release));
+        $this->assertEquals($release, $instance->getRelease());
 
-        $remainingContingent = 1;
-        $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
-        $this->assertEquals($remainingContingent, $instance->getRemainingContingent());
+        $minStay = 2;
+        $this->assertEquals($instance, $instance->setMinStay($minStay));
+        $this->assertEquals($minStay, $instance->getMinStay());
 
-        $booked = 2;
-        $this->assertEquals($instance, $instance->setBooked($booked));
-        $this->assertEquals($booked, $instance->getBooked());
-
-        $stopSell = true;
-        $this->assertEquals($instance, $instance->setStopSell($stopSell));
-        $this->assertEquals($stopSell, $instance->hasStopSell());
-
-        $closedArrival = false;
-        $this->assertEquals($instance, $instance->setClosedArrival($closedArrival));
-        $this->assertEquals($closedArrival, $instance->isClosedArrival());
-
-        $closedDeparture = true;
-        $this->assertEquals($instance, $instance->setClosedDeparture($closedDeparture));
-        $this->assertEquals($closedDeparture, $instance->isClosedDeparture());
+        $maxStay = 3;
+        $this->assertEquals($instance, $instance->setMaxStay($maxStay));
+        $this->assertEquals($maxStay, $instance->getMaxStay());
     }
 }

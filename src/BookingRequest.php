@@ -35,14 +35,14 @@ class BookingRequest
     /**
      * @var bool
      */
-    protected $onlyChanged = false;
+    protected $onlyUpdated = false;
 
     /**
      * @param string|null $bookingUUID
      *
      * @return $this
      */
-    public function setBookingUUID(string $bookingUUID = null): self
+    public function setBookingUUID(?string $bookingUUID): self
     {
         $this->bookingUUID = $bookingUUID;
 
@@ -82,7 +82,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setStartDate(\DateTimeInterface $startDate = null): self
+    public function setStartDate(?\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 
@@ -102,7 +102,7 @@ class BookingRequest
      *
      * @return $this
      */
-    public function setEndDate(\DateTimeInterface $endDate = null): self
+    public function setEndDate(?\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 
@@ -138,13 +138,13 @@ class BookingRequest
     }
 
     /**
-     * @param bool $onlyChanged
+     * @param bool $onlyUpdated
      *
      * @return $this
      */
-    public function setOnlyChanged(bool $onlyChanged): self
+    public function setOnlyUpdated(bool $onlyUpdated): self
     {
-        $this->onlyChanged = $onlyChanged;
+        $this->onlyUpdated = $onlyUpdated;
 
         return $this;
     }
@@ -152,8 +152,8 @@ class BookingRequest
     /**
      * @return bool
      */
-    public function getOnlyChanged(): bool
+    public function getOnlyUpdated(): bool
     {
-        return $this->onlyChanged;
+        return $this->onlyUpdated;
     }
 }

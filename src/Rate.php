@@ -10,36 +10,61 @@ class Rate
     /**
      * @var string
      */
-    protected $uuid;
+    protected $hotelUUID;
 
     /**
      * @var string
      */
-    protected $name;
+    protected $roomUUID;
+
+    /**
+     * @var string
+     */
+    protected $rateUUID;
+
+    /**
+     * @var \DateTimeInterface
+     */
+    protected $date;
+
+    /**
+     * @var float
+     */
+    protected $pricePerPerson;
 
     /**
      * @var int
      */
-    protected $release;
+    protected $remainingContingent;
 
     /**
      * @var int
      */
-    protected $minStay;
+    protected $booked;
 
     /**
-     * @var int
+     * @var bool
      */
-    protected $maxStay;
+    protected $stopSell;
 
     /**
-     * @param string $uuid
+     * @var bool
+     */
+    protected $closedArrival;
+
+    /**
+     * @var bool
+     */
+    protected $closedDeparture;
+
+    /**
+     * @param string $hotelUUID
      *
      * @return $this
      */
-    public function setUUID(string $uuid): self
+    public function setHotelUUID(string $hotelUUID): self
     {
-        $this->uuid = $uuid;
+        $this->hotelUUID = $hotelUUID;
 
         return $this;
     }
@@ -47,19 +72,19 @@ class Rate
     /**
      * @return string
      */
-    public function getUUID(): string
+    public function getHotelUUID(): string
     {
-        return $this->uuid;
+        return $this->hotelUUID;
     }
 
     /**
-     * @param string $name
+     * @param string $roomUUID
      *
      * @return $this
      */
-    public function setName(string $name): self
+    public function setRoomUUID(string $roomUUID): self
     {
-        $this->name = $name;
+        $this->roomUUID = $roomUUID;
 
         return $this;
     }
@@ -67,19 +92,79 @@ class Rate
     /**
      * @return string
      */
-    public function getName(): string
+    public function getRoomUUID(): string
     {
-        return $this->name;
+        return $this->roomUUID;
     }
 
     /**
-     * @param int $release
+     * @param string $rateUUID
      *
      * @return $this
      */
-    public function setRelease(int $release): self
+    public function setRateUUID(string $rateUUID): self
     {
-        $this->release = $release;
+        $this->rateUUID = $rateUUID;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRateUUID(): string
+    {
+        return $this->rateUUID;
+    }
+
+    /**
+     * @param \DateTimeInterface $date
+     *
+     * @return $this
+     */
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getDate(): \DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param float $pricePerPerson
+     *
+     * @return $this
+     */
+    public function setPricePerPerson(float $pricePerPerson): self
+    {
+        $this->pricePerPerson = $pricePerPerson;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPricePerPerson(): float
+    {
+        return $this->pricePerPerson;
+    }
+
+    /**
+     * @param int $remainingContingent
+     *
+     * @return $this
+     */
+    public function setRemainingContingent(int $remainingContingent): self
+    {
+        $this->remainingContingent = $remainingContingent;
 
         return $this;
     }
@@ -87,19 +172,19 @@ class Rate
     /**
      * @return int
      */
-    public function getRelease(): int
+    public function getRemainingContingent(): int
     {
-        return $this->release;
+        return $this->remainingContingent;
     }
 
     /**
-     * @param int $minStay
+     * @param int $booked
      *
      * @return $this
      */
-    public function setMinStay(int $minStay): self
+    public function setBooked(int $booked): self
     {
-        $this->minStay = $minStay;
+        $this->booked = $booked;
 
         return $this;
     }
@@ -107,28 +192,68 @@ class Rate
     /**
      * @return int
      */
-    public function getMinStay(): int
+    public function getBooked(): int
     {
-        return $this->minStay;
+        return $this->booked;
     }
 
     /**
-     * @param int $maxStay
+     * @param bool $stopSell
      *
      * @return $this
      */
-    public function setMaxStay(int $maxStay): self
+    public function setStopSell(bool $stopSell): self
     {
-        $this->maxStay = $maxStay;
+        $this->stopSell = $stopSell;
 
         return $this;
     }
 
     /**
-     * @return int
+     * @return bool
      */
-    public function getMaxStay(): int
+    public function hasStopSell(): bool
     {
-        return $this->maxStay;
+        return $this->stopSell;
+    }
+
+    /**
+     * @param bool $closedArrival
+     *
+     * @return $this
+     */
+    public function setClosedArrival(bool $closedArrival): self
+    {
+        $this->closedArrival = $closedArrival;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isClosedArrival(): bool
+    {
+        return $this->closedArrival;
+    }
+
+    /**
+     * @param bool $closedDeparture
+     *
+     * @return $this
+     */
+    public function setClosedDeparture(bool $closedDeparture): self
+    {
+        $this->closedDeparture = $closedDeparture;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isClosedDeparture(): bool
+    {
+        return $this->closedDeparture;
     }
 }

@@ -30,12 +30,17 @@ class Booking
     /**
      * @var \DateTimeInterface
      */
-    protected $bookingDateTime;
+    protected $createdDateTime;
 
     /**
-     * @var BookedRatePlan[]
+     * @var \DateTimeInterface
      */
-    protected $bookedRatePlans;
+    protected $updatedDateTime;
+
+    /**
+     * @var BookedRate[]
+     */
+    protected $bookedRates;
 
     /**
      * @var string
@@ -45,7 +50,12 @@ class Booking
     /**
      * @var float
      */
-    protected $price;
+    protected $totalBookingPrice;
+
+    /**
+     * @var float|null
+     */
+    protected $totalCancellationCosts;
 
     /**
      * @var string
@@ -53,22 +63,12 @@ class Booking
     protected $currency;
 
     /**
-     * @var Person
+     * @var Customer
      */
     protected $customer;
 
     /**
-     * @var ContactInformation
-     */
-    protected $contactInformation;
-
-    /**
-     * @var Person[]
-     */
-    protected $pax;
-
-    /**
-     * @var string
+     * @var string|null
      */
     protected $comment;
 
@@ -153,13 +153,13 @@ class Booking
     }
 
     /**
-     * @param \DateTimeInterface $bookingDateTime
+     * @param \DateTimeInterface $createdDateTime
      *
      * @return $this
      */
-    public function setBookingDateTime(\DateTimeInterface $bookingDateTime): self
+    public function setCreatedDateTime(\DateTimeInterface $createdDateTime): self
     {
-        $this->bookingDateTime = $bookingDateTime;
+        $this->createdDateTime = $createdDateTime;
 
         return $this;
     }
@@ -167,29 +167,49 @@ class Booking
     /**
      * @return \DateTimeInterface
      */
-    public function getBookingDateTime(): \DateTimeInterface
+    public function getCreatedDateTime(): \DateTimeInterface
     {
-        return $this->bookingDateTime;
+        return $this->createdDateTime;
     }
 
     /**
-     * @param BookedRatePlan[] $bookedRatePlans
+     * @param \DateTimeInterface $updatedDateTime
      *
      * @return $this
      */
-    public function setBookedRatePlans(array $bookedRatePlans): self
+    public function setUpdatedDateTime(\DateTimeInterface $updatedDateTime): self
     {
-        $this->bookedRatePlans = $bookedRatePlans;
+        $this->updatedDateTime = $updatedDateTime;
 
         return $this;
     }
 
     /**
-     * @return BookedRatePlan[]
+     * @return \DateTimeInterface
      */
-    public function getBookedRatePlans(): array
+    public function getUpdatedDateTime(): \DateTimeInterface
     {
-        return $this->bookedRatePlans;
+        return $this->updatedDateTime;
+    }
+
+    /**
+     * @param BookedRate[] $bookedRates
+     *
+     * @return $this
+     */
+    public function setBookedRates(array $bookedRates): self
+    {
+        $this->bookedRates = $bookedRates;
+
+        return $this;
+    }
+
+    /**
+     * @return BookedRate[]
+     */
+    public function getBookedRates(): array
+    {
+        return $this->bookedRates;
     }
 
     /**
@@ -213,13 +233,13 @@ class Booking
     }
 
     /**
-     * @param float $price
+     * @param float $totalBookingPrice
      *
      * @return $this
      */
-    public function setPrice(float $price): self
+    public function setTotalBookingPrice(float $totalBookingPrice): self
     {
-        $this->price = $price;
+        $this->totalBookingPrice = $totalBookingPrice;
 
         return $this;
     }
@@ -227,9 +247,29 @@ class Booking
     /**
      * @return float
      */
-    public function getPrice(): float
+    public function getTotalBookingPrice(): float
     {
-        return $this->price;
+        return $this->totalBookingPrice;
+    }
+
+    /**
+     * @param float|null $totalCancellationCosts
+     *
+     * @return $this
+     */
+    public function setTotalCancellationCosts(?float $totalCancellationCosts): self
+    {
+        $this->totalCancellationCosts = $totalCancellationCosts;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getTotalCancellationCosts(): ?float
+    {
+        return $this->totalCancellationCosts;
     }
 
     /**
@@ -265,51 +305,11 @@ class Booking
     }
 
     /**
-     * @return Person
+     * @return Customer
      */
-    public function getCustomer(): Person
+    public function getCustomer(): Customer
     {
         return $this->customer;
-    }
-
-    /**
-     * @param ContactInformation $contactInformation
-     *
-     * @return $this
-     */
-    public function setContactInformation(ContactInformation $contactInformation): self
-    {
-        $this->contactInformation = $contactInformation;
-
-        return $this;
-    }
-
-    /**
-     * @return ContactInformation
-     */
-    public function getContactInformation(): ContactInformation
-    {
-        return $this->contactInformation;
-    }
-
-    /**
-     * @param Person[] $pax
-     *
-     * @return $this
-     */
-    public function setPax(array $pax): self
-    {
-        $this->pax = $pax;
-
-        return $this;
-    }
-
-    /**
-     * @return Person[]
-     */
-    public function getPax(): array
-    {
-        return $this->pax;
     }
 
     /**
@@ -317,7 +317,7 @@ class Booking
      *
      * @return $this
      */
-    public function setComment(string $comment = null): self
+    public function setComment(?string $comment): self
     {
         $this->comment = $comment;
 

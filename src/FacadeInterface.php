@@ -8,52 +8,56 @@ namespace Invia\CMI;
 interface FacadeInterface
 {
     /**
+     * @param HotelRequest $hotelRequest
+     *
+     * @return Hotel
+     *
+     * @throws InterfaceException
+     */
+    public function getHotel(HotelRequest $hotelRequest): Hotel;
+
+    /**
      * @param RoomRequest $roomRequest
      *
      * @return Room[]
      *
-     * @throws InsufficientRightsException
-     * @throws InvalidRequestException
+     * @throws InterfaceException
      */
     public function getRooms(RoomRequest $roomRequest): array;
 
     /**
-     * @param RateRequest $rateRequest
+     * @param RatePlanRequest $rateRequest
      *
-     * @return Rate[]
+     * @return RatePlan[]
      *
-     * @throws InsufficientRightsException
-     * @throws InvalidRequestException
+     * @throws InterfaceException
      */
-    public function getRates(RateRequest $rateRequest): array;
+    public function getRatePlans(RatePlanRequest $rateRequest): array;
 
     /**
      * @param BookingRequest $bookingRequest
      *
      * @return Booking[]
      *
-     * @throws InsufficientRightsException
-     * @throws InvalidRequestException
+     * @throws InterfaceException
      */
     public function getBookings(BookingRequest $bookingRequest): array;
 
     /**
-     * @param RatePlanRequest $ratePlanRequest
+     * @param RateRequest $rateRequest
      *
-     * @return RatePlan[]
+     * @return Rate[]
      *
-     * @throws InsufficientRightsException
-     * @throws InvalidRequestException
+     * @throws InterfaceException
      */
-    public function getRatePlans(RatePlanRequest $ratePlanRequest): array;
+    public function getRates(RateRequest $rateRequest): array;
 
     /**
-     * @param RatePlanSaveRequest $ratePlanSaveRequest
+     * @param RateSaveRequest $rateSaveRequest
      *
-     * @return RatePlan[]
+     * @return Rate[]
      *
-     * @throws InsufficientRightsException
-     * @throws InvalidRequestException
+     * @throws InterfaceException
      */
-    public function saveRatePlans(RatePlanSaveRequest $ratePlanSaveRequest): array;
+    public function saveRates(RateSaveRequest $rateSaveRequest): array;
 }

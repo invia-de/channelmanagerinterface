@@ -3,9 +3,9 @@
 namespace Invia\CMI;
 
 /**
- * Class RatePlanRequest
+ * Class HotelRequest
  */
-class RatePlanRequest
+class HotelRequest
 {
     /**
      * @var string
