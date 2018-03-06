@@ -3,22 +3,22 @@
 namespace Invia\Tests\CMI;
 
 use Invia\CMI\ConstantsInterface;
-use Invia\CMI\RatePlanSaveRequest;
+use Invia\CMI\RateSaveRequest;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class RatePlanSaveRequestTest
+ * Class RateSaveRequestTest
  *
- * @coversDefaultClass \Invia\CMI\RatePlanSaveRequest
+ * @coversDefaultClass \Invia\CMI\RateSaveRequest
  */
-class RatePlanSaveRequestTest extends TestCase
+class RateSaveRequestTest extends TestCase
 {
     /**
      * @covers ::<public>
      */
     public function testSetGet(): void
     {
-        $instance = new RatePlanSaveRequest();
+        $instance = new RateSaveRequest();
 
         $startDate = new \DateTime();
         $this->assertEquals($instance, $instance->setStartDate($startDate));

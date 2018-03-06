@@ -2,10 +2,10 @@
 
 namespace Invia\Tests\CMI;
 
-use Invia\CMI\BookedRatePlan;
+use Invia\CMI\BookedRate;
 use Invia\CMI\Booking;
 use Invia\CMI\ConstantsInterface;
-use Invia\CMI\ContactInformation;
+use Invia\CMI\Customer;
 use Invia\CMI\Person;
 use PHPUnit\Framework\TestCase;
 
@@ -41,43 +41,46 @@ class BookingTest extends TestCase
         $this->assertEquals($instance, $instance->setDepartureDate($departureDate));
         $this->assertEquals($departureDate, $instance->getDepartureDate());
 
-        $bookingDateTime = new \DateTime();
-        $this->assertEquals($instance, $instance->setBookingDateTime($bookingDateTime));
-        $this->assertEquals($bookingDateTime, $instance->getBookingDateTime());
+        $createdDateTime = new \DateTime();
+        $this->assertEquals($instance, $instance->setCreatedDateTime($createdDateTime));
+        $this->assertEquals($createdDateTime, $instance->getCreatedDateTime());
 
-        $bookedRatePlans = [new BookedRatePlan()];
-        $this->assertEquals($instance, $instance->setBookedRatePlans($bookedRatePlans));
-        $this->assertEquals($bookedRatePlans, $instance->getBookedRatePlans());
+        $updatedDateTime = new \DateTime();
+        $this->assertEquals($instance, $instance->setUpdatedDateTime($updatedDateTime));
+        $this->assertEquals($updatedDateTime, $instance->getUpdatedDateTime());
+
+        $bookedRates = [new BookedRate()];
+        $this->assertEquals($instance, $instance->setBookedRates($bookedRates));
+        $this->assertEquals($bookedRates, $instance->getBookedRates());
 
         $status = ConstantsInterface::BOOKING_STATUS_OPEN;
         $this->assertEquals($instance, $instance->setStatus($status));
         $this->assertEquals($status, $instance->getStatus());
 
-        $price = 3.14;
-        $this->assertEquals($instance, $instance->setPrice($price));
-        $this->assertEquals($price, $instance->getPrice());
+        $totalBookingPrice = 12.34;
+        $this->assertEquals($instance, $instance->setTotalBookingPrice($totalBookingPrice));
+        $this->assertEquals($totalBookingPrice, $instance->getTotalBookingPrice());
+
+        $totalCancellationCosts = 1.23;
+        $this->assertNull($instance->getTotalCancellationCosts());
+        $this->assertEquals($instance, $instance->setTotalCancellationCosts($totalCancellationCosts));
+        $this->assertEquals($totalCancellationCosts, $instance->getTotalCancellationCosts());
+        $this->assertEquals($instance, $instance->setTotalCancellationCosts(null));
+        $this->assertNull($instance->getTotalCancellationCosts());
 
         $currency = 'EUR';
         $this->assertEquals($instance, $instance->setCurrency($currency));
         $this->assertEquals($currency, $instance->getCurrency());
 
-        $customer = new Person();
+        $customer = new Customer();
         $this->assertEquals($instance, $instance->setCustomer($customer));
         $this->assertEquals($customer, $instance->getCustomer());
-
-        $contactInformation = new ContactInformation();
-        $this->assertEquals($instance, $instance->setContactInformation($contactInformation));
-        $this->assertEquals($contactInformation, $instance->getContactInformation());
-
-        $pax = [new Person(), new Person()];
-        $this->assertEquals($instance, $instance->setPax($pax));
-        $this->assertEquals($pax, $instance->getPax());
 
         $comment = 'lorem ipsum';
         $this->assertNull($instance->getComment());
         $this->assertEquals($instance, $instance->setComment($comment));
         $this->assertEquals($comment, $instance->getComment());
-        $this->assertEquals($instance, $instance->setComment());
+        $this->assertEquals($instance, $instance->setComment(null));
         $this->assertNull($instance->getComment());
     }
 }

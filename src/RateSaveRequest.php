@@ -3,9 +3,9 @@
 namespace Invia\CMI;
 
 /**
- * Class RatePlanSaveRequest
+ * Class RateSaveRequest
  */
-class RatePlanSaveRequest
+class RateSaveRequest
 {
     /**
      * @var \DateTimeInterface

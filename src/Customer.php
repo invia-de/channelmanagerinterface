@@ -3,9 +3,9 @@
 namespace Invia\CMI;
 
 /**
- * Class ContactInformation
+ * Class Customer
  */
-class ContactInformation
+class Customer extends Person
 {
     /**
      * @var string
@@ -150,7 +150,7 @@ class ContactInformation
      *
      * @return $this
      */
-    public function setPhone(string $phone = null): self
+    public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
 
