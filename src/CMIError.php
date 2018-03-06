@@ -3,9 +3,9 @@
 namespace Invia\CMI;
 
 /**
- * Class InterfaceError
+ * Class CMIError
  */
-class InterfaceError
+class CMIError
 {
     /**
      * @var int

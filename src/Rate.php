@@ -38,11 +38,6 @@ class Rate
     protected $remainingContingent;
 
     /**
-     * @var int
-     */
-    protected $booked;
-
-    /**
      * @var bool
      */
     protected $stopSell;
@@ -175,26 +170,6 @@ class Rate
     public function getRemainingContingent(): int
     {
         return $this->remainingContingent;
-    }
-
-    /**
-     * @param int $booked
-     *
-     * @return $this
-     */
-    public function setBooked(int $booked): self
-    {
-        $this->booked = $booked;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBooked(): int
-    {
-        return $this->booked;
     }
 
     /**

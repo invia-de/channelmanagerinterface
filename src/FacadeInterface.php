@@ -12,7 +12,7 @@ interface FacadeInterface
      *
      * @return Hotel
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function getHotel(HotelRequest $hotelRequest): Hotel;
 
@@ -21,7 +21,7 @@ interface FacadeInterface
      *
      * @return Room[]
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function getRooms(RoomRequest $roomRequest): array;
 
@@ -30,7 +30,7 @@ interface FacadeInterface
      *
      * @return RatePlan[]
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function getRatePlans(RatePlanRequest $rateRequest): array;
 
@@ -39,7 +39,7 @@ interface FacadeInterface
      *
      * @return Booking[]
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function getBookings(BookingRequest $bookingRequest): array;
 
@@ -48,7 +48,7 @@ interface FacadeInterface
      *
      * @return Rate[]
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function getRates(RateRequest $rateRequest): array;
 
@@ -57,7 +57,7 @@ interface FacadeInterface
      *
      * @return Rate[]
      *
-     * @throws InterfaceException
+     * @throws CMIException
      */
     public function saveRates(RateSaveRequest $rateSaveRequest): array;
 }

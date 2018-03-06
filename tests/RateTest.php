@@ -43,10 +43,6 @@ class RateTest extends TestCase
         $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
         $this->assertEquals($remainingContingent, $instance->getRemainingContingent());
 
-        $booked = 2;
-        $this->assertEquals($instance, $instance->setBooked($booked));
-        $this->assertEquals($booked, $instance->getBooked());
-
         $stopSell = true;
         $this->assertEquals($instance, $instance->setStopSell($stopSell));
         $this->assertEquals($stopSell, $instance->hasStopSell());

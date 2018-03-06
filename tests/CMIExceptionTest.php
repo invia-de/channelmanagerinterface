@@ -2,16 +2,16 @@
 
 namespace Invia\Tests\CMI;
 
-use Invia\CMI\InterfaceError;
-use Invia\CMI\InterfaceException;
+use Invia\CMI\CMIError;
+use Invia\CMI\CMIException;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class InterfaceExceptionTest
  *
- * @coversDefaultClass \Invia\CMI\InterfaceException
+ * @coversDefaultClass \Invia\CMI\CMIException
  */
-class InterfaceExceptionTest extends TestCase
+class CMIExceptionTest extends TestCase
 {
     /**
      * @return void
@@ -23,9 +23,9 @@ class InterfaceExceptionTest extends TestCase
     {
         $message = 'lorem ipsum';
         $code    = 123;
-        $errors  = [$this->createMock(InterfaceError::class)];
+        $errors  = [$this->createMock(CMIError::class)];
 
-        $instance = new InterfaceException($message, $code, $errors);
+        $instance = new CMIException($message, $code, $errors);
 
         $this->assertEquals($message, $instance->getMessage());
         $this->assertEquals($code, $instance->getCode());

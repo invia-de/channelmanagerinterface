@@ -3,9 +3,9 @@
 namespace Invia\CMI;
 
 /**
- * Class InterfaceException
+ * Class CMIException
  */
-class InterfaceException extends \Exception
+class CMIException extends \Exception
 {
     /**
      * @var array
@@ -25,9 +25,7 @@ class InterfaceException extends \Exception
     }
 
     /**
-     * Get the errors for this exception. The error will have the following format:
-     *
-     * @return InterfaceError[] The errors
+     * @return CMIError[] The errors
      */
     public function getErrors(): array
     {
