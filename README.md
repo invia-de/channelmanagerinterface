@@ -31,28 +31,36 @@ The adapter can also implement the BookingNotifyInterface. A Channel Manager can
 
 The booking object contains all the necessary information that is collected during a booking.
 
+## TwigInterface
+
+If you require Twig to render a response, the adapter can implement the TwigInterface.
+
+### setTwig(Twig\Environment twig)
+
+A method which set the Twig environment direct before the handleRequest method is called. 
+
 ## FacadeInterface
 
-### getRooms(Hotel hotel)
+### getHotel(HotelRequest hotelRequest)
+
+Get Hotel with basic information.
+
+### getRooms(RoomRequest roomRequest)
 
 A query of all rooms for the requested hotel.
 
-### getRates(Hotel hotel)
+### getRatePlans(RatePlanRequest ratePlanRequest)
 
-A query of all rate for the requested hotel.
+A query of all rate plans for the requested hotel.
 
 ### getBookings(BookingRequest bookingRequest) 
 
 A query for bookings using parameters that can be combined in different ways.
 
-### getRatePlans(RatePlanRequest ratePlanRequest)
+### getRates(RateRequest rateRequest)
 
-A query for rate plans in a given date range.
+A query for rates in a given date range.
 
-### saveRatePlans(RatePlanSaveRequest ratePlanSaveRequest)
+### saveRates(RateSaveRequest rateSaveRequest)
 
-Add/update multiple rate plans in a given date range. The added/updated rate plans will be returned.
-
-## FacadeDummy
-
-We provide a really simple FacadeDummy which implements the FacadeInterface an gives control over the output of the FacadeInterface methods.  
+Add/update multiple rates in a given date range. The added/updated rates will be returned.
