@@ -35,6 +35,11 @@ class BookedRate
     /**
      * @var string
      */
+    protected $encashment;
+
+    /**
+     * @var string
+     */
     protected $boarding;
 
     /**
@@ -165,6 +170,26 @@ class BookedRate
     public function getRateType(): string
     {
         return $this->rateType;
+    }
+
+    /**
+     * @param string $encashment
+     *
+     * @return $this
+     */
+    public function setEncashment(string $encashment): self
+    {
+        $this->encashment = $encashment;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEncashment(): string
+    {
+        return $this->encashment;
     }
 
     /**

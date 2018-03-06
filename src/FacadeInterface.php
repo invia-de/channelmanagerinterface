@@ -26,13 +26,13 @@ interface FacadeInterface
     public function getRooms(RoomRequest $roomRequest): array;
 
     /**
-     * @param RatePlanRequest $rateRequest
+     * @param RatePlanRequest $ratePlanRequest
      *
      * @return RatePlan[]
      *
      * @throws CMIException
      */
-    public function getRatePlans(RatePlanRequest $rateRequest): array;
+    public function getRatePlans(RatePlanRequest $ratePlanRequest): array;
 
     /**
      * @param BookingRequest $bookingRequest
