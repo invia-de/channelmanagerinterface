@@ -31,6 +31,9 @@ interface ConstantsInterface
     public const RATE_TYPE_NET_RATE   = 'net_rate';
     public const RATE_TYPE_GROSS_RATE = 'gross_rate';
 
+    public const ENCASHMENT_DIRECT = 'direct';
+    public const ENCASHMENT_AGENT  = 'agent';
+
     public const GENDER_MALE   = 'male';
     public const GENDER_FEMALE = 'female';
 

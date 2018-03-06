@@ -42,6 +42,10 @@ class BookedRateTest extends TestCase
         $this->assertEquals($instance, $instance->setRateType($rateType));
         $this->assertEquals($rateType, $instance->getRateType());
 
+        $encashment = ConstantsInterface::ENCASHMENT_DIRECT;
+        $this->assertEquals($instance, $instance->setEncashment($encashment));
+        $this->assertEquals($encashment, $instance->getEncashment());
+
         $boarding = ConstantsInterface::BOARDING_BREAKFAST;
         $this->assertEquals($instance, $instance->setBoarding($boarding));
         $this->assertEquals($boarding, $instance->getBoarding());
