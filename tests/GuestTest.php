@@ -3,15 +3,16 @@
 namespace Invia\Tests\CMI;
 
 use Invia\CMI\ConstantsInterface;
+use Invia\CMI\Guest;
 use Invia\CMI\Person;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class PersonTest
+ * Class GuestTest
  *
- * @coversDefaultClass \Invia\CMI\Person
+ * @coversDefaultClass \Invia\CMI\Guest
  */
-class PersonTest extends TestCase
+class GuestTest extends TestCase
 {
     /**
      * @return void
@@ -20,7 +21,7 @@ class PersonTest extends TestCase
      */
     public function testSetGet(): void
     {
-        $instance = new Person();
+        $instance = new Guest();
 
         $gender = ConstantsInterface::GENDER_MALE;
         $this->assertEquals($instance, $instance->setGender($gender));
@@ -35,10 +36,7 @@ class PersonTest extends TestCase
         $this->assertEquals($lastName, $instance->getLastName());
 
         $age = 42;
-        $this->assertNull($instance->getAge());
         $this->assertEquals($instance, $instance->setAge($age));
         $this->assertEquals($age, $instance->getAge());
-        $this->assertEquals($instance, $instance->setAge());
-        $this->assertNull($instance->getAge());
     }
 }

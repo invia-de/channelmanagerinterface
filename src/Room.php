@@ -28,6 +28,11 @@ class Room
     protected $defaultOccupancy;
 
     /**
+     * @var ExtraOccupancy[]
+     */
+    protected $extraOccupancies;
+
+    /**
      * @param string $uuid
      *
      * @return $this
@@ -105,5 +110,25 @@ class Room
     public function getDefaultOccupancy(): int
     {
         return $this->defaultOccupancy;
+    }
+
+    /**
+     * @param ExtraOccupancy[] $extraOccupancies
+     *
+     * @return $this
+     */
+    public function setExtraOccupancies(array $extraOccupancies): self
+    {
+        $this->extraOccupancies = $extraOccupancies;
+
+        return $this;
+    }
+
+    /**
+     * @return ExtraOccupancy[]
+     */
+    public function getExtraOccupancies(): array
+    {
+        return $this->extraOccupancies;
     }
 }

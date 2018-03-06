@@ -2,6 +2,7 @@
 
 namespace Invia\Tests\CMI;
 
+use Invia\CMI\ExtraOccupancy;
 use Invia\CMI\Room;
 use PHPUnit\Framework\TestCase;
 
@@ -36,5 +37,9 @@ class RoomTest extends TestCase
         $defaultOccupancy = 2;
         $this->assertEquals($instance, $instance->setDefaultOccupancy($defaultOccupancy));
         $this->assertEquals($defaultOccupancy, $instance->getDefaultOccupancy());
+
+        $extraOccupancies = [new ExtraOccupancy()];
+        $this->assertEquals($instance, $instance->setExtraOccupancies($extraOccupancies));
+        $this->assertEquals($extraOccupancies, $instance->getExtraOccupancies());
     }
 }

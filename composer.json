@@ -24,5 +24,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "@stable"
+    },
+    "conflict": {
+        "twig/twig": "<2.0"
+    },
+    "suggest": {
+        "twig/twig": "Required if you want to use the TwigInterface with your adapter"
     }
 }

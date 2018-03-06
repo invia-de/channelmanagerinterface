@@ -1,16 +1,16 @@
 <?php
-
 namespace Invia\Tests\CMI;
 
-use Invia\CMI\ContactInformation;
+use Invia\CMI\ConstantsInterface;
+use Invia\CMI\Customer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class ContactInformationTest
+ * Class CustomerTest
  *
- * @coversDefaultClass \Invia\CMI\ContactInformation
+ * @coversDefaultClass \Invia\CMI\Customer
  */
-class ContactInformationTest extends TestCase
+class CustomerTest extends TestCase
 {
     /**
      * @return void
@@ -19,7 +19,19 @@ class ContactInformationTest extends TestCase
      */
     public function testSetGet(): void
     {
-        $instance = new ContactInformation();
+        $instance = new Customer();
+
+        $gender = ConstantsInterface::GENDER_MALE;
+        $this->assertEquals($instance, $instance->setGender($gender));
+        $this->assertEquals($gender, $instance->getGender());
+
+        $firstName = 'lorem';
+        $this->assertEquals($instance, $instance->setFirstName($firstName));
+        $this->assertEquals($firstName, $instance->getFirstName());
+
+        $lastName = 'ipsum';
+        $this->assertEquals($instance, $instance->setLastName($lastName));
+        $this->assertEquals($lastName, $instance->getLastName());
 
         $streetAndNumber = 'Some Street 1a';
         $this->assertEquals($instance, $instance->setStreetAndNumber($streetAndNumber));
@@ -45,7 +57,7 @@ class ContactInformationTest extends TestCase
         $this->assertNull($instance->getPhone());
         $this->assertEquals($instance, $instance->setPhone($phone));
         $this->assertEquals($phone, $instance->getPhone());
-        $this->assertEquals($instance, $instance->setPhone());
+        $this->assertEquals($instance, $instance->setPhone(null));
         $this->assertNull($instance->getPhone());
     }
 }

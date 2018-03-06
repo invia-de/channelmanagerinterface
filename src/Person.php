@@ -5,7 +5,7 @@ namespace Invia\CMI;
 /**
  * Class Person
  */
-class Person
+abstract class Person
 {
     /**
      * @var string
@@ -21,11 +21,6 @@ class Person
      * @var string
      */
     protected $lastName;
-
-    /**
-     * @var int
-     */
-    protected $age;
 
     /**
      * @param string $gender
@@ -85,25 +80,5 @@ class Person
     public function getLastName(): string
     {
         return $this->lastName;
-    }
-
-    /**
-     * @param int|null $age
-     *
-     * @return $this
-     */
-    public function setAge(int $age = null): self
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getAge(): ?int
-    {
-        return $this->age;
     }
 }
