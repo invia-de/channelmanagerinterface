@@ -58,10 +58,6 @@ class BookedRateTest extends TestCase
         $this->assertEquals($instance, $instance->setTotalPrice($totalPrice));
         $this->assertEquals($totalPrice, $instance->getTotalPrice());
 
-        $commission = 0.0;
-        $this->assertEquals($instance, $instance->setCommission($commission));
-        $this->assertEquals($commission, $instance->getCommission());
-
         $cancellationCosts = 1.23;
         $this->assertNull($instance->getCancellationCosts());
         $this->assertEquals($instance, $instance->setCancellationCosts($cancellationCosts));
