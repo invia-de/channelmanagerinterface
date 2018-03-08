@@ -53,11 +53,6 @@ class BookedRate
     protected $totalPrice;
 
     /**
-     * @var float
-     */
-    protected $commission;
-
-    /**
      * @var float|null
      */
     protected $cancellationCosts;
@@ -250,26 +245,6 @@ class BookedRate
     public function getTotalPrice(): float
     {
         return $this->totalPrice;
-    }
-
-    /**
-     * @return float
-     */
-    public function getCommission(): float
-    {
-        return $this->commission;
-    }
-
-    /**
-     * @param float $commission
-     *
-     * @return $this
-     */
-    public function setCommission(float $commission): self
-    {
-        $this->commission = $commission;
-
-        return $this;
     }
 
     /**
