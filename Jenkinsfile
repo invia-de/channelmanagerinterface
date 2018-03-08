@@ -29,13 +29,14 @@ node {
     }
 
     stage('Run SonarQube analysis') {
+        shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
         switch (env.BRANCH_NAME) {
             case 'master':
                 script {
                     scannerHome = tool 'sonar'
                 }
                 withSonarQubeEnv('sonar') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName='ChannelManagerInterface' -Dsonar.projectKey='channelmanagerinterface'"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface' -Dsonar.projectKey='channelmanagerinterface'"
                 }
                 break
             case 'develop':
@@ -43,7 +44,7 @@ node {
                     scannerHome = tool 'sonar'
                 }
                 withSonarQubeEnv('sonar') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName='ChannelManagerInterface (develop)' -Dsonar.projectKey='channelmanagerinterface_develop'"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface (develop)' -Dsonar.projectKey='channelmanagerinterface_develop'"
                 }
                 break
             default:
@@ -51,7 +52,7 @@ node {
                   scannerHome = tool 'sonar'
                 }
                 withSonarQubeEnv('sonar') {
-                  sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName='ChannelManagerInterface (branch)' -Dsonar.projectKey='channelmanagerinterface_branch'"
+                  sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface (branch)' -Dsonar.projectKey='channelmanagerinterface_branch'"
                 }
         }
     }
