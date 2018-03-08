@@ -24,7 +24,7 @@ node {
     stage('Run PHPUnit') {
         docker.image('ideaplexus/php:7.2').inside("-u 0:0") {
             sh 'docker-php-ext-enable xdebug'
-            sh 'php bin/phpunit --log-junit build/junit.xml --coverage-clover build/clover.xml'
+            sh 'php vendor/bin/phpunit --log-junit build/junit.xml --coverage-clover build/clover.xml'
         }
     }
 
