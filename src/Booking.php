@@ -33,7 +33,7 @@ class Booking
     protected $createdDateTime;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTimeInterface|null
      */
     protected $updatedDateTime;
 
