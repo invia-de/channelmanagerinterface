@@ -4,7 +4,6 @@ namespace Invia\Tests\CMI;
 
 use Invia\CMI\ConstantsInterface;
 use Invia\CMI\Guest;
-use Invia\CMI\Person;
 use PHPUnit\Framework\TestCase;
 
 /**

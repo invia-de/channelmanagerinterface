@@ -33,7 +33,7 @@ class Booking
     protected $createdDateTime;
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTimeInterface|null
      */
     protected $updatedDateTime;
 
@@ -173,11 +173,11 @@ class Booking
     }
 
     /**
-     * @param \DateTimeInterface $updatedDateTime
+     * @param \DateTimeInterface|null $updatedDateTime
      *
      * @return $this
      */
-    public function setUpdatedDateTime(\DateTimeInterface $updatedDateTime): self
+    public function setUpdatedDateTime(?\DateTimeInterface $updatedDateTime): self
     {
         $this->updatedDateTime = $updatedDateTime;
 
@@ -185,9 +185,9 @@ class Booking
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return \DateTimeInterface|null
      */
-    public function getUpdatedDateTime(): \DateTimeInterface
+    public function getUpdatedDateTime(): ?\DateTimeInterface
     {
         return $this->updatedDateTime;
     }

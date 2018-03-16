@@ -67,4 +67,10 @@ interface ConstantsInterface
         self::AFFECTED_WEEK_DAY_THURSDAY,
         self::AFFECTED_WEEK_DAY_FRIDAY
     ];
+
+    public const ERROR_APPLICATION     = 1;
+    public const ERROR_AUTHENTICATION  = 2;
+    public const ERROR_AUTHORISATION   = 3;
+    public const ERROR_INVALID_REQUEST = 4;
+    public const ERROR_INVALID_VALUE   = 5;
 }
