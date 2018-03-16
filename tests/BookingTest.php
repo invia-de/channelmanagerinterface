@@ -6,7 +6,6 @@ use Invia\CMI\BookedRate;
 use Invia\CMI\Booking;
 use Invia\CMI\ConstantsInterface;
 use Invia\CMI\Customer;
-use Invia\CMI\Person;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -46,8 +45,11 @@ class BookingTest extends TestCase
         $this->assertEquals($createdDateTime, $instance->getCreatedDateTime());
 
         $updatedDateTime = new \DateTime();
+        $this->assertNull($instance->getUpdatedDateTime());
         $this->assertEquals($instance, $instance->setUpdatedDateTime($updatedDateTime));
         $this->assertEquals($updatedDateTime, $instance->getUpdatedDateTime());
+        $this->assertEquals($instance, $instance->setUpdatedDateTime(null));
+        $this->assertNull($instance->getUpdatedDateTime());
 
         $bookedRates = [new BookedRate()];
         $this->assertEquals($instance, $instance->setBookedRates($bookedRates));
