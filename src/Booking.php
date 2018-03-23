@@ -293,11 +293,11 @@ class Booking
     }
 
     /**
-     * @param Person $customer
+     * @param Customer $customer
      *
      * @return $this
      */
-    public function setCustomer(Person $customer): self
+    public function setCustomer(Customer $customer): self
     {
         $this->customer = $customer;
 
