@@ -23,6 +23,9 @@ With the getCredentials method, the adapter must read and return the credentials
 If the credentials have been accepted by the ChannelManager Interface, the handleRequest method is called on the adapter and must process the request.
 The adapter can access the possible methods of the ChannelManager Interface via the given facade.
 
+### handleException(CMIException exception)
+If an exception is thrown (by the ChannelManager Interface or an adapter), this method has to handle this exception and creating valid response. 
+
 ## BookingNotifyInterface
 
 The adapter can also implement the BookingNotifyInterface. A Channel Manager can be informed about a new booking by a customer.
