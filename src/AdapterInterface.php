@@ -38,4 +38,11 @@ interface AdapterInterface
      * @return Response
      */
     public function handleRequest(FacadeInterface $facade): Response;
+
+    /**
+     * @param CMIException $exception
+     *
+     * @return Response
+     */
+    public function handleException(CMIException $exception): Response;
 }
