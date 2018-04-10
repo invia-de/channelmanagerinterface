@@ -53,6 +53,14 @@ class RateSaveRequestTest extends TestCase
         $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
         $this->assertEquals($remainingContingent, $instance->getRemainingContingent());
 
+        $minStay = 0;
+        $this->assertEquals($instance, $instance->setMinStay($minStay));
+        $this->assertEquals($minStay, $instance->getMinStay());
+
+        $maxStay = 1;
+        $this->assertEquals($instance, $instance->setMaxStay($maxStay));
+        $this->assertEquals($maxStay, $instance->getMaxStay());
+
         $stopSell = true;
         $this->assertEquals($instance, $instance->setStopSell($stopSell));
         $this->assertEquals($stopSell, $instance->hasStopSell());
