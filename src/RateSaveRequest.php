@@ -48,6 +48,16 @@ class RateSaveRequest
     protected $remainingContingent;
 
     /**
+     * @var int
+     */
+    protected $minStay;
+
+    /**
+     * @var int
+     */
+    protected $maxStay;
+
+    /**
      * @var bool
      */
     protected $stopSell;
@@ -221,6 +231,46 @@ class RateSaveRequest
     public function getRemainingContingent(): int
     {
         return $this->remainingContingent;
+    }
+
+    /**
+     * @param int $minStay
+     *
+     * @return $this
+     */
+    public function setMinStay(int $minStay): self
+    {
+        $this->minStay = $minStay;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinStay(): int
+    {
+        return $this->minStay;
+    }
+
+    /**
+     * @param int $maxStay
+     *
+     * @return $this
+     */
+    public function setMaxStay(int $maxStay): self
+    {
+        $this->maxStay = $maxStay;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxStay(): int
+    {
+        return $this->maxStay;
     }
 
     /**
