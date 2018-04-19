@@ -41,9 +41,9 @@ class RateSaveRequestTest extends TestCase
         $this->assertEquals($instance, $instance->setRoomUUID($roomUUID));
         $this->assertEquals($roomUUID, $instance->getRoomUUID());
 
-        $rateUUID = 'a03b1512-a4d2-42b4-83fe-8cf4830fa70d';
-        $this->assertEquals($instance, $instance->setRateUUID($rateUUID));
-        $this->assertEquals($rateUUID, $instance->getRateUUID());
+        $ratePlanUUID = 'a03b1512-a4d2-42b4-83fe-8cf4830fa70d';
+        $this->assertEquals($instance, $instance->setRatePlanUUID($ratePlanUUID));
+        $this->assertEquals($ratePlanUUID, $instance->getRatePlanUUID());
 
         $pricePerPerson = 3.14;
         $this->assertEquals($instance, $instance->setPricePerPerson($pricePerPerson));

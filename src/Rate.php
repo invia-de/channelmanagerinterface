@@ -20,7 +20,7 @@ class Rate
     /**
      * @var string
      */
-    protected $rateUUID;
+    protected $ratePlanUUID;
 
     /**
      * @var \DateTimeInterface
@@ -103,13 +103,13 @@ class Rate
     }
 
     /**
-     * @param string $rateUUID
+     * @param string $ratePlanUUID
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID): self
+    public function setRatePlanUUID(string $ratePlanUUID): self
     {
-        $this->rateUUID = $rateUUID;
+        $this->ratePlanUUID = $ratePlanUUID;
 
         return $this;
     }
@@ -117,9 +117,9 @@ class Rate
     /**
      * @return string
      */
-    public function getRateUUID(): string
+    public function getRatePlanUUID(): string
     {
-        return $this->rateUUID;
+        return $this->ratePlanUUID;
     }
 
     /**
