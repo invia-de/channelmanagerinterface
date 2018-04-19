@@ -42,7 +42,6 @@ class RatePlan
      */
     protected $maxStay;
 
-
     /**
      * @param string $uuid
      *

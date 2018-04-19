@@ -35,7 +35,7 @@ class RateRequest
     /**
      * @var array
      */
-    protected $rateUUIDs;
+    protected $ratePlanUUIDs;
 
     /**
      * @param \DateTimeInterface $startDate
@@ -138,13 +138,13 @@ class RateRequest
     }
 
     /**
-     * @param array $rateUUIDs
+     * @param array $ratePlanUUIDs
      *
      * @return $this
      */
-    public function setRateUUIDs(array $rateUUIDs): self
+    public function setRatePlanUUIDs(array $ratePlanUUIDs): self
     {
-        $this->rateUUIDs = $rateUUIDs;
+        $this->ratePlanUUIDs = $ratePlanUUIDs;
 
         return $this;
     }
@@ -152,8 +152,8 @@ class RateRequest
     /**
      * @return array
      */
-    public function getRateUUIDs(): array
+    public function getRatePlanUUIDs(): array
     {
-        return $this->rateUUIDs;
+        return $this->ratePlanUUIDs;
     }
 }
