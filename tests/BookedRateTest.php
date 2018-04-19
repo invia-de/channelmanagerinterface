@@ -30,13 +30,13 @@ class BookedRateTest extends TestCase
         $this->assertEquals($instance, $instance->setRoomName($roomName));
         $this->assertEquals($roomName, $instance->getRoomName());
 
-        $rateUUID = '5c96015b-755e-47c4-a521-e0bb521a2300';
-        $this->assertEquals($instance, $instance->setRateUUID($rateUUID));
-        $this->assertEquals($rateUUID, $instance->getRateUUID());
+        $ratePlanUUID = '5c96015b-755e-47c4-a521-e0bb521a2300';
+        $this->assertEquals($instance, $instance->setRatePlanUUID($ratePlanUUID));
+        $this->assertEquals($ratePlanUUID, $instance->getRatePlanUUID());
 
-        $rateName = 'ipsum';
-        $this->assertEquals($instance, $instance->setRateName($rateName));
-        $this->assertEquals($rateName, $instance->getRateName());
+        $ratePlanName = 'ipsum';
+        $this->assertEquals($instance, $instance->setRatePlanName($ratePlanName));
+        $this->assertEquals($ratePlanName, $instance->getRatePlanName());
 
         $rateType = ConstantsInterface::RATE_TYPE_NET_RATE;
         $this->assertEquals($instance, $instance->setRateType($rateType));
