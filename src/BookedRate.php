@@ -20,12 +20,12 @@ class BookedRate
     /**
      * @var string
      */
-    protected $rateUUID;
+    protected $ratePlanUUID;
 
     /**
      * @var string
      */
-    protected $rateName;
+    protected $ratePlanName;
 
     /**
      * @var string
@@ -108,13 +108,13 @@ class BookedRate
     }
 
     /**
-     * @param string $rateUUID
+     * @param string $ratePlanUUID
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID): self
+    public function setRatePlanUUID(string $ratePlanUUID): self
     {
-        $this->rateUUID = $rateUUID;
+        $this->ratePlanUUID = $ratePlanUUID;
 
         return $this;
     }
@@ -122,19 +122,19 @@ class BookedRate
     /**
      * @return string
      */
-    public function getRateUUID(): string
+    public function getRatePlanUUID(): string
     {
-        return $this->rateUUID;
+        return $this->ratePlanUUID;
     }
 
     /**
-     * @param string $rateName
+     * @param string $ratePlanName
      *
      * @return $this
      */
-    public function setRateName(string $rateName): self
+    public function setRatePlanName(string $ratePlanName): self
     {
-        $this->rateName = $rateName;
+        $this->ratePlanName = $ratePlanName;
 
         return $this;
     }
@@ -142,9 +142,9 @@ class BookedRate
     /**
      * @return string
      */
-    public function getRateName(): string
+    public function getRatePlanName(): string
     {
-        return $this->rateName;
+        return $this->ratePlanName;
     }
 
     /**
