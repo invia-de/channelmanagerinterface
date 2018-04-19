@@ -43,8 +43,8 @@ class RateRequestTest extends TestCase
         $this->assertEquals($instance, $instance->setRoomUUIDs($roomUUIDs));
         $this->assertEquals($roomUUIDs, $instance->getRoomUUIDs());
 
-        $rateUUIDs = ['ca224a10-3b0e-4476-9ed2-1c48aefea656'];
-        $this->assertEquals($instance, $instance->setRateUUIDs($rateUUIDs));
-        $this->assertEquals($rateUUIDs, $instance->getRateUUIDs());
+        $ratePlanUUIDs = ['ca224a10-3b0e-4476-9ed2-1c48aefea656'];
+        $this->assertEquals($instance, $instance->setRatePlanUUIDs($ratePlanUUIDs));
+        $this->assertEquals($ratePlanUUIDs, $instance->getRatePlanUUIDs());
     }
 }

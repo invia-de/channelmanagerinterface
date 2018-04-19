@@ -27,9 +27,9 @@ class RateTest extends TestCase
         $this->assertEquals($instance, $instance->setRoomUUID($roomUUID));
         $this->assertEquals($roomUUID, $instance->getRoomUUID());
 
-        $rateUUID = 'a8225c0e-1606-414d-9831-83ee106c9f1a';
-        $this->assertEquals($instance, $instance->setRateUUID($rateUUID));
-        $this->assertEquals($rateUUID, $instance->getRateUUID());
+        $ratePlanUUID = 'a8225c0e-1606-414d-9831-83ee106c9f1a';
+        $this->assertEquals($instance, $instance->setRatePlanUUID($ratePlanUUID));
+        $this->assertEquals($ratePlanUUID, $instance->getRatePlanUUID());
 
         $date = new \DateTime();
         $this->assertEquals($instance, $instance->setDate($date));

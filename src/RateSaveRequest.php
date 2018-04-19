@@ -35,7 +35,7 @@ class RateSaveRequest
     /**
      * @var string
      */
-    protected $rateUUID;
+    protected $ratePlanUUID;
 
     /**
      * @var float
@@ -173,13 +173,13 @@ class RateSaveRequest
     }
 
     /**
-     * @param string $rateUUID
+     * @param string $ratePlanUUID
      *
      * @return $this
      */
-    public function setRateUUID(string $rateUUID): self
+    public function setRatePlanUUID(string $ratePlanUUID): self
     {
-        $this->rateUUID = $rateUUID;
+        $this->ratePlanUUID = $ratePlanUUID;
 
         return $this;
     }
@@ -187,9 +187,9 @@ class RateSaveRequest
     /**
      * @return string
      */
-    public function getRateUUID(): string
+    public function getRatePlanUUID(): string
     {
-        return $this->rateUUID;
+        return $this->ratePlanUUID;
     }
 
 
