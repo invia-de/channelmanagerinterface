@@ -6,7 +6,7 @@ pipeline {
       parallel {
         stage('Pull PHP') {
           agent {
-            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+            docker { image 'php:7.2-alpine' }
           }
           steps {
             echo 'Done'
@@ -19,10 +19,14 @@ pipeline {
       parallel {
         stage('Prepare PHP') {
           agent {
-            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+            docker { image 'php:7.2-alpine' }
           }
           steps {
-            sh 'composer install --no-progress --no-interaction --optimize-autoloader --no-scripts'
+            sh """
+                php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+                php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.6.5
+                composer install --no-progress --no-interaction --optimize-autoloader --no-scripts
+            """
           }
         }
       }
@@ -32,10 +36,15 @@ pipeline {
       parallel {
         stage('Run phpunit') {
           agent {
-            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+            docker { image 'php:7.2-alpine' }
           }
           steps {
-            sh 'php vendor/bin/phpunit --testsuite default --colors=never --log-junit build/junit.xml --coverage-clover build/clover.xml'
+            sh """
+              apk add --no-cache $PHPIZE_DEPS
+              pecl install xdebug
+              docker-php-ext-enable xdebug
+              php vendor/bin/phpunit --testsuite default --colors=never --log-junit build/junit.xml --coverage-clover build/clover.xml
+            """
           }
         }
       }
