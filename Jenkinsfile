@@ -1,59 +1,101 @@
-node {
-    checkout scm
+pipeline {
+  agent any
 
-    stage('Download/Update PHP docker image') {
-        docker.image('ideaplexus/php:7.2').inside {
-            echo '';
+  stages {
+    stage('Pull Images') {
+      parallel {
+        stage('Pull PHP') {
+          agent {
+            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+          }
+          steps {
+            echo 'Done'
+          }
         }
+      }
     }
 
-    stage('Install PHP dependencies') {
-        docker.image('ideaplexus/php:7.2').inside('-u 0:0') {
-            withCredentials([[$class: 'SSHUserPrivateKeyBinding', credentialsId: 'jenkins_ssh_key', keyFileVariable: 'ID_RSA']]) {
-                sh 'mkdir -p /root/.ssh'
-                sh 'cp $ID_RSA /root/.ssh/id_rsa'
-                sh 'echo "Host *" > /root/.ssh/config'
-                sh 'echo "    PasswordAuthentication  no" >> /root/.ssh/config'
-                sh 'echo "    StrictHostKeyChecking   no" >> /root/.ssh/config'
-                sh 'echo "    UserKnownHostsFile      /dev/null" >> /root/.ssh/config'
-            }
+    stage('Prepare Project') {
+      parallel {
+        stage('Prepare PHP') {
+          agent {
+            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+          }
+          steps {
             sh 'composer install --no-progress --no-interaction --optimize-autoloader --no-scripts'
+          }
         }
+      }
     }
 
-    stage('Run PHPUnit') {
-        docker.image('ideaplexus/php:7.2').inside("-u 0:0") {
-            sh 'docker-php-ext-enable xdebug'
-            sh 'php vendor/bin/phpunit --log-junit build/junit.xml --coverage-clover build/clover.xml'
+    stage('Test Project') {
+      parallel {
+        stage('Run phpunit') {
+          agent {
+            docker { image '${AWS_REGISTRY}/infrastructure/images/service:development' }
+          }
+          steps {
+            sh 'php vendor/bin/phpunit --testsuite default --colors=never --log-junit build/junit.xml --coverage-clover build/clover.xml'
+          }
         }
+      }
     }
 
-    stage('Run SonarQube analysis') {
-        shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-        switch (env.BRANCH_NAME) {
-            case 'master':
+    stage('Publish') {
+      environment {
+        PROJECT = 'invia.interface.channel-manager'
+      }
+      parallel {
+        stage('SonarQube') {
+          stages {
+            stage('master') {
+              agent any
+              when {
+                branch 'master'
+              }
+              steps {
                 script {
-                    scannerHome = tool 'sonar'
+                  SONAR_SCANNER_HOME = tool 'sonar'
+                  GIT_COMMIT_SHORT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                 }
                 withSonarQubeEnv('sonar') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface' -Dsonar.projectKey='channelmanagerinterface'"
+                  sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectVersion='${GIT_COMMIT_SHORT}' -Dsonar.projectName='${PROJECT}/master' -Dsonar.projectKey='${PROJECT}:master'"
                 }
-                break
-            case 'develop':
+              }
+            }
+            stage('develop') {
+              agent any
+              when {
+                branch 'develop'
+              }
+              steps {
                 script {
-                    scannerHome = tool 'sonar'
+                  SONAR_SCANNER_HOME = tool 'sonar'
+                  GIT_COMMIT_SHORT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                 }
                 withSonarQubeEnv('sonar') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface (develop)' -Dsonar.projectKey='channelmanagerinterface_develop'"
+                  sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectVersion='${GIT_COMMIT_SHORT}' -Dsonar.projectName='${PROJECT}/develop' -Dsonar.projectKey='${PROJECT}:develop'"
                 }
-                break
-            default:
+              }
+            }
+            stage('branch') {
+              agent any
+              when {
+                expression { BRANCH_NAME ==~ /feature.*/ }
+              }
+              steps {
                 script {
-                  scannerHome = tool 'sonar'
+                  SONAR_SCANNER_HOME = tool 'sonar'
+                  GIT_COMMIT_SHORT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
                 }
                 withSonarQubeEnv('sonar') {
-                  sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion='${shortCommit}' -Dsonar.projectName='ChannelManagerInterface (branch)' -Dsonar.projectKey='channelmanagerinterface_branch'"
+                  sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectVersion='${GIT_COMMIT_SHORT}' -Dsonar.projectName='${PROJECT}/branch' -Dsonar.projectKey='${PROJECT}:branch'"
                 }
+              }
+            }
+          }
         }
+      }
     }
+  }
 }
