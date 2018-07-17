@@ -40,7 +40,7 @@ pipeline {
           }
           steps {
             sh """
-              apk add --no-cache $PHPIZE_DEPS
+              apk add --no-cache ${PHPIZE_DEPS}
               pecl install xdebug
               docker-php-ext-enable xdebug
               php vendor/bin/phpunit --testsuite default --colors=never --log-junit build/junit.xml --coverage-clover build/clover.xml
