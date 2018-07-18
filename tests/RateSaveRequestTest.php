@@ -46,31 +46,52 @@ class RateSaveRequestTest extends TestCase
         $this->assertEquals($ratePlanUUID, $instance->getRatePlanUUID());
 
         $pricePerPerson = 3.14;
+        $this->assertNull($instance->getPricePerPerson());
         $this->assertEquals($instance, $instance->setPricePerPerson($pricePerPerson));
         $this->assertEquals($pricePerPerson, $instance->getPricePerPerson());
+        $this->assertEquals($instance, $instance->setPricePerPerson(null));
+        $this->assertNull($instance->getPricePerPerson());
 
         $remainingContingent = 1;
+        $this->assertNull($instance->getRemainingContingent());
         $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
         $this->assertEquals($remainingContingent, $instance->getRemainingContingent());
+        $this->assertEquals($instance, $instance->setRemainingContingent(null));
+        $this->assertNull($instance->getRemainingContingent());
 
         $minStay = 0;
+        $this->assertNull($instance->getMinStay());
         $this->assertEquals($instance, $instance->setMinStay($minStay));
         $this->assertEquals($minStay, $instance->getMinStay());
+        $this->assertEquals($instance, $instance->setMinStay(null));
+        $this->assertNull($instance->getMinStay());
 
         $maxStay = 1;
+        $this->assertNull($instance->getMaxStay());
         $this->assertEquals($instance, $instance->setMaxStay($maxStay));
         $this->assertEquals($maxStay, $instance->getMaxStay());
+        $this->assertEquals($instance, $instance->setMaxStay(null));
+        $this->assertNull($instance->getMaxStay());
 
         $stopSell = true;
+        $this->assertNull($instance->hasStopSell());
         $this->assertEquals($instance, $instance->setStopSell($stopSell));
         $this->assertEquals($stopSell, $instance->hasStopSell());
+        $this->assertEquals($instance, $instance->setStopSell(null));
+        $this->assertNull($instance->hasStopSell());
 
         $closedArrival = false;
+        $this->assertNull($instance->isClosedArrival());
         $this->assertEquals($instance, $instance->setClosedArrival($closedArrival));
         $this->assertEquals($closedArrival, $instance->isClosedArrival());
+        $this->assertEquals($instance, $instance->setClosedArrival(null));
+        $this->assertNull($instance->isClosedArrival());
 
         $closedDeparture = true;
+        $this->assertNull($instance->isClosedDeparture());
         $this->assertEquals($instance, $instance->setClosedDeparture($closedDeparture));
         $this->assertEquals($closedDeparture, $instance->isClosedDeparture());
+        $this->assertEquals($instance, $instance->setClosedDeparture(null));
+        $this->assertNull($instance->isClosedDeparture());
     }
 }
