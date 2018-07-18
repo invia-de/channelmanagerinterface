@@ -5,8 +5,13 @@
          stopOnError="true"
          stopOnFailure="true"
          forceCoversAnnotation="true"
-         verbose="true">
-    <testsuite>
+         verbose="true"
+         colors="true">
+    <php>
+        <ini name="memory_limit" value="-1" />
+    </php>
+
+    <testsuite name="default">
         <directory suffix="Test.php">tests</directory>
     </testsuite>
 
