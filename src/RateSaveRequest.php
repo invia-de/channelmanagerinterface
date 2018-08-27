@@ -43,34 +43,44 @@ class RateSaveRequest
     protected $pricePerPerson;
 
     /**
-     * @var int|null
+     * @var float|null
      */
-    protected $remainingContingent;
+    protected $pricePerChild;
 
     /**
-     * @var int|null
+     * @var float|null
      */
-    protected $minStay;
+    protected $pricePerInfant;
 
     /**
-     * @var int|null
+     * @var int
      */
-    protected $maxStay;
+    protected $remainingContingent = 0;
 
     /**
-     * @var bool|null
+     * @var int
      */
-    protected $stopSell;
+    protected $minStay = 0;
 
     /**
-     * @var bool|null
+     * @var int
      */
-    protected $closedArrival;
+    protected $maxStay = 0;
 
     /**
-     * @var bool|null
+     * @var bool
      */
-    protected $closedDeparture;
+    protected $stopSell = false;
+
+    /**
+     * @var bool
+     */
+    protected $closedArrival = false;
+
+    /**
+     * @var bool
+     */
+    protected $closedDeparture = false;
 
     /**
      * @param \DateTimeInterface $startDate
@@ -214,11 +224,51 @@ class RateSaveRequest
     }
 
     /**
-     * @param int|null $remainingContingent
+     * @param float|null $pricePerChild
      *
      * @return $this
      */
-    public function setRemainingContingent(?int $remainingContingent): self
+    public function setPricePerChild(?float $pricePerChild): self
+    {
+        $this->pricePerChild = $pricePerChild;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerChild(): ?float
+    {
+        return $this->pricePerChild;
+    }
+
+    /**
+     * @param float|null $pricePerInfant
+     *
+     * @return $this
+     */
+    public function setPricePerInfant(?float $pricePerInfant): self
+    {
+        $this->pricePerInfant = $pricePerInfant;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerInfant(): ?float
+    {
+        return $this->pricePerInfant;
+    }
+
+    /**
+     * @param int $remainingContingent
+     *
+     * @return $this
+     */
+    public function setRemainingContingent(int $remainingContingent): self
     {
         $this->remainingContingent = $remainingContingent;
 
@@ -226,19 +276,19 @@ class RateSaveRequest
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getRemainingContingent(): ?int
+    public function getRemainingContingent(): int
     {
         return $this->remainingContingent;
     }
 
     /**
-     * @param int|null $minStay
+     * @param int $minStay
      *
      * @return $this
      */
-    public function setMinStay(?int $minStay): self
+    public function setMinStay(int $minStay): self
     {
         $this->minStay = $minStay;
 
@@ -246,19 +296,19 @@ class RateSaveRequest
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getMinStay(): ?int
+    public function getMinStay(): int
     {
         return $this->minStay;
     }
 
     /**
-     * @param int|null $maxStay
+     * @param int $maxStay
      *
      * @return $this
      */
-    public function setMaxStay(?int $maxStay): self
+    public function setMaxStay(int $maxStay): self
     {
         $this->maxStay = $maxStay;
 
@@ -266,19 +316,19 @@ class RateSaveRequest
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getMaxStay(): ?int
+    public function getMaxStay(): int
     {
         return $this->maxStay;
     }
 
     /**
-     * @param bool|null $stopSell
+     * @param bool $stopSell
      *
      * @return $this
      */
-    public function setStopSell(?bool $stopSell): self
+    public function setStopSell(bool $stopSell): self
     {
         $this->stopSell = $stopSell;
 
@@ -286,19 +336,19 @@ class RateSaveRequest
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function hasStopSell(): ?bool
+    public function hasStopSell(): bool
     {
         return $this->stopSell;
     }
 
     /**
-     * @param bool|null $closedArrival
+     * @param bool $closedArrival
      *
      * @return $this
      */
-    public function setClosedArrival(?bool $closedArrival): self
+    public function setClosedArrival(bool $closedArrival): self
     {
         $this->closedArrival = $closedArrival;
 
@@ -306,19 +356,19 @@ class RateSaveRequest
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function isClosedArrival(): ?bool
+    public function isClosedArrival(): bool
     {
         return $this->closedArrival;
     }
 
     /**
-     * @param bool|null $closedDeparture
+     * @param bool $closedDeparture
      *
      * @return $this
      */
-    public function setClosedDeparture(?bool $closedDeparture): self
+    public function setClosedDeparture(bool $closedDeparture): self
     {
         $this->closedDeparture = $closedDeparture;
 
@@ -326,9 +376,9 @@ class RateSaveRequest
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function isClosedDeparture(): ?bool
+    public function isClosedDeparture(): bool
     {
         return $this->closedDeparture;
     }
