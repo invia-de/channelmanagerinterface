@@ -39,6 +39,14 @@ class RateTest extends TestCase
         $this->assertEquals($instance, $instance->setPricePerPerson($pricePerPerson));
         $this->assertEquals($pricePerPerson, $instance->getPricePerPerson());
 
+        $pricePerChild = 2.71;
+        $this->assertEquals($instance, $instance->setPricePerChild($pricePerChild));
+        $this->assertEquals($pricePerChild, $instance->getPricePerChild());
+
+        $pricePerInfant = 1.41;
+        $this->assertEquals($instance, $instance->setPricePerInfant($pricePerInfant));
+        $this->assertEquals($pricePerInfant, $instance->getPricePerInfant());
+
         $remainingContingent = 1;
         $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
         $this->assertEquals($remainingContingent, $instance->getRemainingContingent());

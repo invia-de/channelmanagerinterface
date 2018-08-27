@@ -38,39 +38,49 @@ class RateSaveRequest
     protected $ratePlanUUID;
 
     /**
-     * @var float
+     * @var float|null
      */
     protected $pricePerPerson;
 
     /**
-     * @var int
+     * @var float|null
      */
-    protected $remainingContingent;
+    protected $pricePerChild;
+
+    /**
+     * @var float|null
+     */
+    protected $pricePerInfant;
 
     /**
      * @var int
      */
-    protected $minStay;
+    protected $remainingContingent = 0;
 
     /**
      * @var int
      */
-    protected $maxStay;
+    protected $minStay = 0;
+
+    /**
+     * @var int
+     */
+    protected $maxStay = 0;
 
     /**
      * @var bool
      */
-    protected $stopSell;
+    protected $stopSell = false;
 
     /**
      * @var bool
      */
-    protected $closedArrival;
+    protected $closedArrival = false;
 
     /**
      * @var bool
      */
-    protected $closedDeparture;
+    protected $closedDeparture = false;
 
     /**
      * @param \DateTimeInterface $startDate
@@ -194,11 +204,11 @@ class RateSaveRequest
 
 
     /**
-     * @param float $pricePerPerson
+     * @param float|null $pricePerPerson
      *
      * @return $this
      */
-    public function setPricePerPerson(float $pricePerPerson): self
+    public function setPricePerPerson(?float $pricePerPerson): self
     {
         $this->pricePerPerson = $pricePerPerson;
 
@@ -206,11 +216,51 @@ class RateSaveRequest
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getPricePerPerson(): float
+    public function getPricePerPerson(): ?float
     {
         return $this->pricePerPerson;
+    }
+
+    /**
+     * @param float|null $pricePerChild
+     *
+     * @return $this
+     */
+    public function setPricePerChild(?float $pricePerChild): self
+    {
+        $this->pricePerChild = $pricePerChild;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerChild(): ?float
+    {
+        return $this->pricePerChild;
+    }
+
+    /**
+     * @param float|null $pricePerInfant
+     *
+     * @return $this
+     */
+    public function setPricePerInfant(?float $pricePerInfant): self
+    {
+        $this->pricePerInfant = $pricePerInfant;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerInfant(): ?float
+    {
+        return $this->pricePerInfant;
     }
 
     /**

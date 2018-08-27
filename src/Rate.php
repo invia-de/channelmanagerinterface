@@ -28,10 +28,21 @@ class Rate
     protected $date;
 
     /**
-     * @var float
+     * @var float|null
      */
     protected $pricePerPerson;
 
+    /**
+     * @var float|null
+     */
+    protected $pricePerChild;
+
+    /**
+     * @var float|null
+     */
+    protected $pricePerInfant;
+
+    /**
     /**
      * @var int
      */
@@ -143,11 +154,11 @@ class Rate
     }
 
     /**
-     * @param float $pricePerPerson
+     * @param float|null $pricePerPerson
      *
      * @return $this
      */
-    public function setPricePerPerson(float $pricePerPerson): self
+    public function setPricePerPerson(?float $pricePerPerson): self
     {
         $this->pricePerPerson = $pricePerPerson;
 
@@ -155,19 +166,60 @@ class Rate
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getPricePerPerson(): float
+    public function getPricePerPerson(): ?float
     {
         return $this->pricePerPerson;
     }
 
+
     /**
-     * @param int $remainingContingent
+     * @param float|null $pricePerChild
      *
      * @return $this
      */
-    public function setRemainingContingent(int $remainingContingent): self
+    public function setPricePerChild(?float $pricePerChild): self
+    {
+        $this->pricePerChild = $pricePerChild;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerChild(): ?float
+    {
+        return $this->pricePerChild;
+    }
+
+    /**
+     * @param float|null $pricePerInfant
+     *
+     * @return $this
+     */
+    public function setPricePerInfant(?float $pricePerInfant): self
+    {
+        $this->pricePerInfant = $pricePerInfant;
+
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getPricePerInfant(): ?float
+    {
+        return $this->pricePerInfant;
+    }
+
+    /**
+     * @param int|null $remainingContingent
+     *
+     * @return $this
+     */
+    public function setRemainingContingent(?int $remainingContingent): self
     {
         $this->remainingContingent = $remainingContingent;
 
@@ -175,7 +227,7 @@ class Rate
     }
 
     /**
-     * @return int
+     * @return int|null
      */
     public function getRemainingContingent(): int
     {
@@ -183,11 +235,11 @@ class Rate
     }
 
     /**
-     * @param int $minStay
+     * @param int|null $minStay
      *
      * @return $this
      */
-    public function setMinStay(int $minStay): self
+    public function setMinStay(?int $minStay): self
     {
         $this->minStay = $minStay;
 
@@ -195,19 +247,19 @@ class Rate
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getMinStay(): int
+    public function getMinStay(): ?int
     {
         return $this->minStay;
     }
 
     /**
-     * @param int $maxStay
+     * @param int|null $maxStay
      *
      * @return $this
      */
-    public function setMaxStay(int $maxStay): self
+    public function setMaxStay(?int $maxStay): self
     {
         $this->maxStay = $maxStay;
 
@@ -215,9 +267,9 @@ class Rate
     }
 
     /**
-     * @return int
+     * @return ?int
      */
-    public function getMaxStay(): int
+    public function getMaxStay(): ?int
     {
         return $this->maxStay;
     }
