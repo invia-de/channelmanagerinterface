@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Invia\Tests\CMI;
 
@@ -67,32 +67,32 @@ class RateSaveRequestTest extends TestCase
         $this->assertNull($instance->getPricePerInfant());
 
         $remainingContingent = 1;
-        $this->assertEquals(0, $instance->getRemainingContingent());
+        $this->assertNull($instance->getRemainingContingent());
         $this->assertEquals($instance, $instance->setRemainingContingent($remainingContingent));
         $this->assertEquals($remainingContingent, $instance->getRemainingContingent());
 
         $minStay = 1;
-        $this->assertEquals(0, $instance->getMinStay());
+        $this->assertNull($instance->getMinStay());
         $this->assertEquals($instance, $instance->setMinStay($minStay));
         $this->assertEquals($minStay, $instance->getMinStay());
 
         $maxStay = 2;
-        $this->assertEquals(0, $instance->getMaxStay());
+        $this->assertNull($instance->getMaxStay());
         $this->assertEquals($instance, $instance->setMaxStay($maxStay));
         $this->assertEquals($maxStay, $instance->getMaxStay());
 
         $stopSell = true;
-        $this->assertEquals(false, $instance->hasStopSell());
+        $this->assertNull($instance->hasStopSell());
         $this->assertEquals($instance, $instance->setStopSell($stopSell));
         $this->assertEquals($stopSell, $instance->hasStopSell());
 
         $closedArrival = true;
-        $this->assertEquals(false, $instance->isClosedArrival());
+        $this->assertNull($instance->isClosedArrival());
         $this->assertEquals($instance, $instance->setClosedArrival($closedArrival));
         $this->assertEquals($closedArrival, $instance->isClosedArrival());
 
         $closedDeparture = true;
-        $this->assertEquals(false, $instance->isClosedDeparture());
+        $this->assertNull($instance->isClosedDeparture());
         $this->assertEquals($instance, $instance->setClosedDeparture($closedDeparture));
         $this->assertEquals($closedDeparture, $instance->isClosedDeparture());
     }
