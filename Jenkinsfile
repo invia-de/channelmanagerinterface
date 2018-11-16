@@ -1,6 +1,8 @@
 pipeline {
   agent any
 
+  stages {
+
     stage('Test Project') {
       parallel {
         stage('Run phpunit') {
@@ -15,7 +17,7 @@ pipeline {
               pecl install xdebug
               docker-php-ext-enable xdebug
               php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-              php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.6.5
+              php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.7.3
               composer install --no-progress --no-interaction --optimize-autoloader --no-scripts
               php vendor/bin/simple-phpunit --testsuite default --colors=never --log-junit build/junit.xml --coverage-clover build/clover.xml
             """
