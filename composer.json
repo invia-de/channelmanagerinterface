@@ -21,10 +21,10 @@
     },
     "require": {
         "php": ">=7.2",
-        "symfony/http-foundation": "~3.4"
+        "symfony/http-foundation": "^3.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable"
+        "symfony/phpunit-bridge": "^3.4|^4.0"
     },
     "conflict": {
         "twig/twig": "<2.0"

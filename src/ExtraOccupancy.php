@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Invia\CMI;
 
@@ -65,7 +65,7 @@ class ExtraOccupancy
      * @param int $infants
      * @return $this
      */
-    public function setInfants(int $infants): ExtraOccupancy
+    public function setInfants(int $infants): self
     {
         $this->infants = $infants;
 
